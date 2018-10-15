@@ -1,0 +1,51 @@
+               zeros           EQU    0000
+               one             EQU    0001
+               counter         EQU    r1
+               anyadrs         EQU    0460
+               
+               Init
+                       ENINT  ;Enable interrupts
+0000 1E00                       LOAD    counter, zeros  ; Zero initialize counter register
+0001 AE01 0000
+               
+               Main
+                       JUMP    Main
+0003 A400 0003
+               
+               ; address for interrupt service routine
+                       ADDRESS 0300
+               
+               ; ---------------counter----------------------
+               ;
+               ;       if (uhdl)
+               ;           counter += 1
+               ;       else
+               ;           counter -= 1
+               ;
+               ; -----------------------------------------------
+               ISR
+                       INPUT   ra, anyadrs     ; read input which is uhdl into ra
+0300 A20A 0460
+                       AND     ra, 0001        ; is uhdl 1 or 0 ?
+0302 8A0A 0001
+                       JUMPZ   Decrement       ; if 0 -> decrement
+0304 AA00 030b
+                       ADD     counter, one    ; if 1 -> increment
+0306 8201 0001
+                       OUTPUT  counter, 0001   ; output the count
+0308 B801 0001
+                       RETEN
+030A 4600               
+               Decrement
+                       SUB     counter, one
+030B DC01 0001
+                       OUTPUT  counter, 0001
+030D B801 0001
+                       RETEN
+030F 4600               
+               ; interrupt service routine vectored through 0FFE
+               
+                       ADDRESS 0FFE
+                       JUMP    ISR
+0FFE A400 0300
+                       END
