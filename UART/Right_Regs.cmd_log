@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/Right_Regs.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/Right_Regs.syr" 

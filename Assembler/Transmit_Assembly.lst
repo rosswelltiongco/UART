@@ -1,0 +1,241 @@
+               ZEROS		EQU		0000
+               ASCII_C		EQU		0043
+               ASCII_S		EQU		0053
+               ASCII_U		EQU		0055
+               ASCII_L		EQU		004C
+               ASCII_B		EQU		0042
+               ASCII_SP	EQU		0020
+               ASCII_E		EQU		0045
+               ASCII_4		EQU		0034
+               ASCII_6		EQU		0036
+               ASCII_0		EQU		0030
+               ASCII_CR	EQU		000D
+               ASCII_LF	EQU		000A
+               ASCII_-		EQU		002D
+               PTR			EQU		RC
+               TMP			EQU	 	R9
+               COUNT		EQU		R2
+               LEDS 		EQU     R7
+               ON			EQU     0001
+               ALL			EQU     FFFF
+               MAXLED		EQU 	8000
+               LED_CNT		EQU		R5
+               DIS_CNT		EQU     R6
+               
+               
+               START	
+               		
+               		LOAD	R0, ASCII_C
+0000 AE00 0043
+               		STORE	R0, 0000
+0002 F400 0000
+               		LOAD 	R0, ASCII_S
+0004 AE00 0053
+               		STORE	R0, 0001
+0006 F400 0001
+               		LOAD 	R0, ASCII_U
+0008 AE00 0055
+               		STORE	R0, 0002
+000A F400 0002
+               		LOAD 	R0, ASCII_L
+000C AE00 004C
+               		STORE	R0, 0003
+000E F400 0003
+               		LOAD 	R0, ASCII_B
+0010 AE00 0042
+               		STORE	R0, 0004
+0012 F400 0004
+               		LOAD 	R0, ASCII_SP
+0014 AE00 0020
+               		STORE	R0, 0005
+0016 F400 0005
+               		LOAD 	R0, ASCII_C
+0018 AE00 0043
+               		STORE	R0, 0006
+001A F400 0006
+               		LOAD 	R0, ASCII_E
+001C AE00 0045
+               		STORE	R0, 0007
+001E F400 0007
+               		LOAD 	R0, ASCII_C
+0020 AE00 0043
+               		STORE	R0, 0008
+0022 F400 0008
+               		LOAD 	R0, ASCII_S
+0024 AE00 0053
+               		STORE	R0, 0009
+0026 F400 0009
+               		LOAD 	R0, ASCII_SP
+0028 AE00 0020
+               		STORE	R0, 000A
+002A F400 000A
+               		LOAD 	R0, ASCII_4
+002C AE00 0034
+               		STORE	R0, 000B
+002E F400 000B
+               		LOAD 	R0, ASCII_6
+0030 AE00 0036
+               		STORE	R0, 000C
+0032 F400 000C
+               		LOAD 	R0, ASCII_0
+0034 AE00 0030
+               		STORE	R0, 000D
+0036 F400 000D
+               		LOAD 	R0, ASCII_SP
+0038 AE00 0020
+               		STORE	R0, 000E
+003A F400 000E
+               		LOAD 	R0, ASCII_-
+003C AE00 002D
+               		STORE	R0, 000F
+003E F400 000F
+               		LOAD 	R0, ASCII_SP
+0040 AE00 0020
+               		STORE	R0, 0010
+0042 F400 0010
+               		LOAD	R0, ASCII_0
+0044 AE00 0030
+               		STORE	R0, 0011
+0046 F400 0011
+               		STORE	R0, 0012
+0048 F400 0012
+               		STORE	R0, 0013
+004A F400 0013
+               		STORE	R0, 0014
+004C F400 0014
+               		STORE	R0, 0015
+004E F400 0015
+               		LOAD 	R0, ASCII_CR
+0050 AE00 000D
+               		STORE	R0,	0016
+0052 F400 0016
+               		LOAD	R0, ASCII_LF
+0054 AE00 000A
+               		STORE	R0, 0017
+0056 F400 0017
+               		
+               		LOAD 	LEDS, 0001
+0058 AE07 0001
+               		LOAD    DIS_CNT, 0000
+005A AE06 0000
+               		ENINT
+005C 1E00               		
+               MAIN	
+               		ADD 	LED_CNT, 0001
+005D 8205 0001
+               		ADDC	DIS_CNT, 0000
+005F 8606 0000
+               		COMP	DIS_CNT, 0003
+0061 9806 0003
+               		JUMPC 	LED_DISPLAY
+0063 A600 006a
+               		
+               		LOAD 	LED_CNT, 0000
+0065 AE05 0000
+               		LOAD    DIS_CNT, 0000
+0067 AE06 0000
+               		RL	LEDS
+0069 4807
+               		
+               LED_DISPLAY	
+               		OUTPUT  LEDS, 0002	 ;output at reg port 0x02
+006A B807 0002
+               		JUMP MAIN
+006C A400 005d
+               		
+               		ADDRESS 0300
+               	
+               ISR		CALL DISPLAY
+0300 8E00 0304
+               		INPUT	RF, RA
+20AF
+               		RETEN
+0303 4600               		
+               DISPLAY FETCH	TMP, PTR
+72C9
+               		OUTPUT  TMP, 0000	; write ASCII reg to port 0x00
+0305 B809 0000
+               		ADD		PTR, 0001
+0307 820C 0001
+               		COMP	PTR, 0018
+0309 980C 0018
+               		CALLZ	DONE
+030B 9400 030e
+               		RETURN
+030D 3A00               		
+               DONE	ADD		COUNT, 0001
+030E 8202 0001
+               		LOAD	PTR, ZEROS
+0310 AE0C 0000
+               		CALL	BINTOASCII
+0312 8E00 0320
+               		RETURN
+0314 3A00               		
+               FINDIT	LOAD 	RB,	ZEROS
+0315 AE0B 0000
+               
+               BACK2	SUB 	RE, RD
+5EDE
+               		JUMPC 	DONE2
+0318 A600 031e
+               		ADD 	RB,	0001
+031A 820B 0001
+               		JUMP 	BACK2
+031C A400 0317
+               DONE2	ADD 	RE,	RD
+04DE
+               		RETURN
+031F 3A00               
+               BINTOASCII
+               		LOAD 	RE, COUNT
+302E
+               		LOAD 	RD, 2710
+0321 AE0D 2710
+               		CALL	FINDIT
+0323 8E00 0315
+               
+               		ADD 	RB, 0030
+0325 820B 0030
+               		STORE 	RB, 0011
+0327 F40B 0011
+               		LOAD 	RD, 03E8
+0329 AE0D 03E8
+               		CALL	FINDIT
+032B 8E00 0315
+               		
+               		ADD 	RB, 0030
+032D 820B 0030
+               		STORE 	RB, 0012
+032F F40B 0012
+               		LOAD 	RD, 0064
+0331 AE0D 0064
+               		CALL	FINDIT
+0333 8E00 0315
+               		
+               		ADD 	RB, 0030
+0335 820B 0030
+               		STORE 	RB, 0013
+0337 F40B 0013
+               		LOAD 	RD, 000A
+0339 AE0D 000A
+               		CALL	FINDIT
+033B 8E00 0315
+               		
+               		ADD 	RB, 0030
+033D 820B 0030
+               		STORE 	RB, 0014
+033F F40B 0014
+               		ADD 	RE, 0030
+0341 820E 0030
+               		STORE 	RE, 0015
+0343 F40E 0015
+               		
+               		RETURN
+0345 3A00               
+               		ADDRESS	0FFE
+               
+               ENDIT	JUMP ISR
+0FFE A400 0300
+               		END
+               		
+               		

@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Nov 01 14:17:59 2018
+
+drc -z TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf
+
+DRC detected 0 errors and 0 warnings.

@@ -1,0 +1,43 @@
+Release 14.7 ngdbuild P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line:
+C:\Xilinx_ISE_Design_Suite\14.7\ISE_DS\ISE\bin\nt\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc
+Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3
+TXRDY_CSULB_CECS_460.ngc TXRDY_CSULB_CECS_460.ngd
+
+Reading NGO file
+"C:/Users/Rosswell/Documents/UART/UART/TXRDY_CSULB_CECS_460.ngc" ...
+Loading design module "ipcore_dir/tb_rom.ngc"...
+Loading design module "ipcore_dir/stack_ram.ngc"...
+Loading design module "ipcore_dir/scratch_ram.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file
+"Nexys4DDR_XC7A100T_ISE-Template.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 184452 kilobytes
+
+Writing NGD file "TXRDY_CSULB_CECS_460.ngd" ...
+Total REAL time to NGDBUILD completion:  9 sec
+Total CPU time to NGDBUILD completion:   8 sec
+
+Writing NGDBUILD log file "TXRDY_CSULB_CECS_460.bld"...

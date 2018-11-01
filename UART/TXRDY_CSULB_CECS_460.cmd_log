@@ -1,0 +1,367 @@
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460_preroute.twx TXRDY_CSULB_CECS_460_map.ncd -o TXRDY_CSULB_CECS_460_preroute.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "C:/Users/Rosswell/Downloads/UART - Copy/TXRDY_CSULB_CECS_460.xst" -ofn "C:/Users/Rosswell/Downloads/UART - Copy/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 "TXRDY_CSULB_CECS_460.ngc" TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 
+xst -intstyle ise -ifn "C:/Users/Rosswell/Documents/UART/UART/TXRDY_CSULB_CECS_460.xst" -ofn "C:/Users/Rosswell/Documents/UART/UART/TXRDY_CSULB_CECS_460.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc Nexys4DDR_XC7A100T_ISE-Template.ucf -p xc7a100t-csg324-3 TXRDY_CSULB_CECS_460.ngc TXRDY_CSULB_CECS_460.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ngd TXRDY_CSULB_CECS_460.pcf 
+par -w -intstyle ise -ol high -mt off TXRDY_CSULB_CECS_460_map.ncd TXRDY_CSULB_CECS_460.ncd TXRDY_CSULB_CECS_460.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TXRDY_CSULB_CECS_460.twx TXRDY_CSULB_CECS_460.ncd -o TXRDY_CSULB_CECS_460.twr TXRDY_CSULB_CECS_460.pcf -ucf Nexys4DDR_XC7A100T_ISE-Template.ucf 
+bitgen -intstyle ise -f TXRDY_CSULB_CECS_460.ut TXRDY_CSULB_CECS_460.ncd 

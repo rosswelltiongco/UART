@@ -1,0 +1,7 @@
+verilog isim_temp "Shift_Register.v"
+verilog isim_temp "Right_Regs.v"
+verilog isim_temp "Bit_Time_Counter.v"
+verilog isim_temp "Bit_Decoder.v"
+verilog isim_temp "Bit_Counter.v"
+verilog isim_temp "UART.v"
+verilog isim_temp "C:/Verilog/14.6/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,918 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.55 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.55 secs
+ 
+--> Reading design: TXRDY_CSULB_CECS_460.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TXRDY_CSULB_CECS_460.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TXRDY_CSULB_CECS_460"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : TXRDY_CSULB_CECS_460
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\stack_ram.v" into library work
+Parsing module <stack_ram>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\scratch_ram.v" into library work
+Parsing module <scratch_ram>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\tramelblaze.v" into library work
+Parsing module <tramelblaze>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\SRQ_FLOP.v" into library work
+Parsing module <SRQ_FLOP>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\Shift_Register.v" into library work
+Parsing module <Shift_Register>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\LD_REG.v" into library work
+Parsing module <LD_REG>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\tb_rom.v" into library work
+Parsing module <tb_rom>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\D_FLOP.v" into library work
+Parsing module <D_FLOP>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\Bit_Time_Counter.v" into library work
+Parsing module <Bit_Time_Counter>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\Bit_Decoder.v" into library work
+Parsing module <Bit_Decoder>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\Bit_Counter.v" into library work
+Parsing module <Bit_Counter>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\transmit_engine.v" into library work
+Parsing module <transmit_engine>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\tramelblaze_top.v" into library work
+Parsing module <tramelblaze_top>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\ped.v" into library work
+Parsing module <ped>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\AISO.v" into library work
+Parsing module <AISO>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\ADDR_DECODE.v" into library work
+Parsing module <ADDR_DECODE>.
+Analyzing Verilog file "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" into library work
+Parsing module <TXRDY_CSULB_CECS_460>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <TXRDY_CSULB_CECS_460>.
+
+Elaborating module <AISO>.
+
+Elaborating module <transmit_engine>.
+
+Elaborating module <SRQ_FLOP>.
+
+Elaborating module <LD_REG>.
+
+Elaborating module <D_FLOP>.
+
+Elaborating module <Bit_Decoder>.
+
+Elaborating module <Shift_Register>.
+
+Elaborating module <Bit_Time_Counter>.
+
+Elaborating module <Bit_Counter>.
+
+Elaborating module <ped>.
+
+Elaborating module <tramelblaze_top>.
+
+Elaborating module <tramelblaze>.
+
+Elaborating module <stack_ram>.
+WARNING:HDLCompiler:1499 - "C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\stack_ram.v" Line 39: Empty module <stack_ram> remains a black box.
+
+Elaborating module <scratch_ram>.
+WARNING:HDLCompiler:1499 - "C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\scratch_ram.v" Line 39: Empty module <scratch_ram> remains a black box.
+
+Elaborating module <tb_rom>.
+WARNING:HDLCompiler:1499 - "C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\tb_rom.v" Line 39: Empty module <tb_rom> remains a black box.
+
+Elaborating module <ADDR_DECODE>.
+WARNING:HDLCompiler:1127 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" Line 50: Assignment to reads0 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" Line 51: Assignment to reads2 ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <TXRDY_CSULB_CECS_460>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v".
+INFO:Xst:3210 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" line 49: Output port <READS0> of the instance <addr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" line 49: Output port <READS1> of the instance <addr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" line 49: Output port <WRITES1> of the instance <addr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" line 49: Output port <READS2> of the instance <addr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" line 49: Output port <WRITES2> of the instance <addr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" line 49: Output port <READS3> of the instance <addr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" line 49: Output port <WRITES3> of the instance <addr> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <TXRDY_CSULB_CECS_460> synthesized.
+
+Synthesizing Unit <AISO>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\AISO.v".
+    Found 2-bit register for signal <sync>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <AISO> synthesized.
+
+Synthesizing Unit <transmit_engine>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\transmit_engine.v".
+    Summary:
+	no macro.
+Unit <transmit_engine> synthesized.
+
+Synthesizing Unit <SRQ_FLOP>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\SRQ_FLOP.v".
+    Found 1-bit register for signal <Q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <SRQ_FLOP> synthesized.
+
+Synthesizing Unit <LD_REG>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\LD_REG.v".
+    Found 8-bit register for signal <Q>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <LD_REG> synthesized.
+
+Synthesizing Unit <D_FLOP>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\D_FLOP.v".
+    Found 1-bit register for signal <Q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <D_FLOP> synthesized.
+
+Synthesizing Unit <Bit_Decoder>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\Bit_Decoder.v".
+    Summary:
+	inferred   6 Multiplexer(s).
+Unit <Bit_Decoder> synthesized.
+
+Synthesizing Unit <Shift_Register>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\Shift_Register.v".
+    Found 11-bit register for signal <store>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Shift_Register> synthesized.
+
+Synthesizing Unit <Bit_Time_Counter>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\Bit_Time_Counter.v".
+    Found 19-bit register for signal <count>.
+    Found 19-bit adder for signal <count[18]_GND_11_o_add_3_OUT> created at line 53.
+    Found 19-bit comparator equal for signal <BTU> created at line 25
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  19 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <Bit_Time_Counter> synthesized.
+
+Synthesizing Unit <Bit_Counter>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\Bit_Counter.v".
+    Found 4-bit register for signal <count>.
+    Found 1-bit register for signal <DONED1>.
+    Found 4-bit adder for signal <count[3]_GND_12_o_add_2_OUT> created at line 38.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Bit_Counter> synthesized.
+
+Synthesizing Unit <ped>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\ped.v".
+    Found 1-bit register for signal <meta_reg>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <ped> synthesized.
+
+Synthesizing Unit <tramelblaze_top>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\tramelblaze_top.v".
+    Summary:
+	no macro.
+Unit <tramelblaze_top> synthesized.
+
+Synthesizing Unit <tramelblaze>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\tramelblaze.v".
+        INTERRUPT_ADDRESS = 16'b0000111111111110
+        FETCH = 5'b00000
+        DECODE = 5'b00001
+        SECOND = 5'b00010
+        THIRD = 5'b00011
+        EXECUTE = 5'b00100
+        ENDIT = 5'b00101
+        ENDCALL = 5'b00110
+        ENDRET = 5'b00111
+        ENDRET2 = 5'b01000
+        ENDRET3 = 5'b01001
+        OUTPUT_XK_2 = 5'b01010
+        OUTPUT_XY_2 = 5'b01011
+        INPUT_XP_2 = 5'b01100
+        INPUT_XY_2 = 5'b01101
+        FETCH_XK_2 = 5'b01110
+        FETCH_XY_2 = 5'b01111
+        STORE_XK_2 = 5'b10000
+        STORE_XY_2 = 5'b10001
+        NOTHING = 5'b00000
+        ADD = 5'b00001
+        ADDC = 5'b00010
+        AND = 5'b00011
+        SUB = 5'b00100
+        OR = 5'b00101
+        RLX = 5'b00110
+        RRX = 5'b00111
+        SL0X = 5'b01000
+        SL1X = 5'b01001
+        SLAX = 5'b01010
+        SLXX = 5'b01011
+        SR0X = 5'b01100
+        SR1X = 5'b01101
+        SRAX = 5'b01110
+        SRXX = 5'b01111
+        XOR = 5'b10000
+        SUBC = 5'b10001
+        NOP = 7'b0000000
+        ADD_XK = 7'b0000010
+        ADD_XY = 7'b0000100
+        ADDCY_XK = 7'b0000110
+        ADDCY_XY = 7'b0001000
+        AND_XK = 7'b0001010
+        AND_XY = 7'b0001100
+        CALL_AAA = 7'b0001110
+        CALLC_AAA = 7'b0010000
+        CALLNC_AAA = 7'b0010010
+        CALLZ_AAA = 7'b0010100
+        CALLNZ_AAA = 7'b0010110
+        COMP_XK = 7'b0011000
+        COMP_XY = 7'b0011010
+        DISINT = 7'b0011100
+        ENINT = 7'b0011110
+        INPUT_XY = 7'b0100000
+        INPUT_XP = 7'b0100010
+        JUMP_AAA = 7'b0100100
+        JUMPC_AAA = 7'b0100110
+        JUMPNC_AAA = 7'b0101000
+        JUMPZ_AAA = 7'b0101010
+        JUMPNZ_AAA = 7'b0101100
+        LOAD_XK = 7'b0101110
+        LOAD_XY = 7'b0110000
+        OR_XK = 7'b0110010
+        OR_XY = 7'b0110100
+        OUTPUT_XY = 7'b0110110
+        OUTPUT_XK = 7'b0111000
+        RETURN = 7'b0111010
+        RETURN_C = 7'b0111100
+        RETURN_NC = 7'b0111110
+        RETURN_Z = 7'b1000000
+        RETURN_NZ = 7'b1000010
+        RETURN_DIS = 7'b1000100
+        RETURN_EN = 7'b1000110
+        RL_X = 7'b1001000
+        RR_X = 7'b1001010
+        SL0_X = 7'b1001100
+        SL1_X = 7'b1001110
+        SLA_X = 7'b1010000
+        SLX_X = 7'b1010010
+        SR0_X = 7'b1010100
+        SR1_X = 7'b1010110
+        SRA_X = 7'b1011000
+        SRX_X = 7'b1011010
+        SUB_XK = 7'b1011100
+        SUB_XY = 7'b1011110
+        SUBC_XK = 7'b1100000
+        SUBC_XY = 7'b1100010
+        TEST_XK = 7'b1100100
+        TEST_XY = 7'b1100110
+        XOR_XK = 7'b1101000
+        XOR_XY = 7'b1101010
+        FETCH_XK = 7'b1110000
+        FETCH_XY = 7'b1110010
+        STORE_XK = 7'b1110100
+        STORE_XY = 7'b1110110
+    Register <interruptackQ> equivalent to <ldflagPQ> has been removed
+    Found 1-bit register for signal <ldpcQ>.
+    Found 1-bit register for signal <ldirQ>.
+    Found 1-bit register for signal <int_enable>.
+    Found 1-bit register for signal <int_proc>.
+    Found 1-bit register for signal <carryPQ>.
+    Found 1-bit register for signal <zeroPQ>.
+    Found 1-bit register for signal <carryQ>.
+    Found 1-bit register for signal <zeroQ>.
+    Found 1-bit register for signal <ldflagQ>.
+    Found 1-bit register for signal <ldflagPQ>.
+    Found 1-bit register for signal <loadKQ>.
+    Found 1-bit register for signal <wtrfQ>.
+    Found 1-bit register for signal <wtsrQ>.
+    Found 1-bit register for signal <sel_alubQ>.
+    Found 1-bit register for signal <pushQ>.
+    Found 1-bit register for signal <popQ>.
+    Found 1-bit register for signal <enintQ>.
+    Found 1-bit register for signal <disintQ>.
+    Found 1-bit register for signal <sel_portidQ>.
+    Found 1-bit register for signal <enableportidQ>.
+    Found 1-bit register for signal <enableoutportQ>.
+    Found 1-bit register for signal <readstrobeQ>.
+    Found 1-bit register for signal <writestrobeQ>.
+    Found 7-bit register for signal <stackPointQ>.
+    Found 16-bit register for signal <inst_reg>.
+    Found 16-bit register for signal <const_reg>.
+    Found 16-bit register for signal <pc>.
+    Found 256-bit register for signal <n0250[255:0]>.
+    Found 17-bit register for signal <alu_out_reg>.
+    Found 4-bit register for signal <stateQ>.
+    Found 2-bit register for signal <sel_pcQ>.
+    Found 3-bit register for signal <sel_rfwQ>.
+    Found 3-bit register for signal <flag_selQ>.
+    Found 5-bit register for signal <alu_opQ>.
+    Found finite state machine <FSM_0> for signal <stateQ>.
+    -----------------------------------------------------------------------
+    | States             | 16                                             |
+    | Transitions        | 59                                             |
+    | Inputs             | 11                                             |
+    | Outputs            | 13                                             |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit subtractor for signal <pc_min1> created at line 209.
+    Found 7-bit subtractor for signal <stackPointQ[6]_GND_15_o_sub_10_OUT> created at line 213.
+    Found 17-bit subtractor for signal <GND_15_o_GND_15_o_sub_66_OUT> created at line 345.
+    Found 17-bit subtractor for signal <GND_15_o_GND_15_o_sub_67_OUT> created at line 345.
+    Found 16-bit adder for signal <pc[15]_GND_15_o_add_3_OUT> created at line 193.
+    Found 7-bit adder for signal <stackAdrs[6]_GND_15_o_add_11_OUT> created at line 214.
+    Found 17-bit adder for signal <n0394> created at line 343.
+    Found 17-bit adder for signal <BUS_0004_GND_15_o_add_63_OUT> created at line 343.
+    Found 64x8-bit Read Only RAM for signal <_n2366>
+    Found 16-bit 4-to-1 multiplexer for signal <address_mux> created at line 192.
+    Found 16-bit 16-to-1 multiplexer for signal <regA> created at line 263.
+    Found 16-bit 16-to-1 multiplexer for signal <regB> created at line 264.
+    Found 16-bit 7-to-1 multiplexer for signal <rf_wdata> created at line 267.
+    Found 17-bit 21-to-1 multiplexer for signal <alu_out> created at line 340.
+    Found 1-bit 8-to-1 multiplexer for signal <_n1989> created at line 507.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred 364 D-type flip-flop(s).
+	inferred  79 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <tramelblaze> synthesized.
+
+Synthesizing Unit <ADDR_DECODE>.
+    Related source file is "C:\Users\Rosswell\Documents\UART\UART\ADDR_DECODE.v".
+    Found 16-bit shifter logical left for signal <GND_20_o_ADIO[3]_shift_left_1_OUT> created at line 27
+    Found 16-bit shifter logical left for signal <GND_20_o_ADIO[3]_shift_left_13_OUT> created at line 32
+    Summary:
+	inferred   8 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <ADDR_DECODE> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 64x8-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 10
+ 16-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+ 17-bit adder                                          : 2
+ 17-bit subtractor                                     : 2
+ 19-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 7-bit adder                                           : 1
+ 7-bit subtractor                                      : 1
+# Registers                                            : 44
+ 1-bit register                                        : 29
+ 11-bit register                                       : 1
+ 16-bit register                                       : 3
+ 17-bit register                                       : 1
+ 19-bit register                                       : 1
+ 2-bit register                                        : 2
+ 256-bit register                                      : 1
+ 3-bit register                                        : 2
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+ 7-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 19-bit comparator equal                               : 1
+# Multiplexers                                         : 96
+ 1-bit 2-to-1 multiplexer                              : 38
+ 1-bit 8-to-1 multiplexer                              : 1
+ 11-bit 2-to-1 multiplexer                             : 1
+ 16-bit 16-to-1 multiplexer                            : 2
+ 16-bit 2-to-1 multiplexer                             : 27
+ 16-bit 4-to-1 multiplexer                             : 1
+ 16-bit 7-to-1 multiplexer                             : 1
+ 17-bit 21-to-1 multiplexer                            : 1
+ 19-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 12
+ 3-bit 2-to-1 multiplexer                              : 6
+ 4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 2
+# FSMs                                                 : 1
+# Xors                                                 : 4
+ 1-bit xor16                                           : 1
+ 1-bit xor8                                            : 1
+ 17-bit xor2                                           : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/tb_rom.ngc>.
+Reading core <ipcore_dir/stack_ram.ngc>.
+Reading core <ipcore_dir/scratch_ram.ngc>.
+Loading core <tb_rom> for timing and area information for instance <your_instance_name>.
+Loading core <stack_ram> for timing and area information for instance <stkr>.
+Loading core <scratch_ram> for timing and area information for instance <sr>.
+
+Synthesizing (advanced) Unit <Bit_Counter>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <Bit_Counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Bit_Time_Counter>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <Bit_Time_Counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <tramelblaze>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n2366> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(inst_reg<14:13>,inst_reg<11:12>,inst_reg<10:9>)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <tramelblaze> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 64x8-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 8
+ 16-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+ 17-bit adder                                          : 2
+ 17-bit subtractor                                     : 2
+ 7-bit adder                                           : 1
+ 7-bit subtractor                                      : 1
+# Counters                                             : 2
+ 19-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 391
+ Flip-Flops                                            : 391
+# Comparators                                          : 1
+ 19-bit comparator equal                               : 1
+# Multiplexers                                         : 94
+ 1-bit 2-to-1 multiplexer                              : 38
+ 1-bit 8-to-1 multiplexer                              : 1
+ 11-bit 2-to-1 multiplexer                             : 1
+ 16-bit 16-to-1 multiplexer                            : 2
+ 16-bit 2-to-1 multiplexer                             : 27
+ 16-bit 4-to-1 multiplexer                             : 1
+ 16-bit 7-to-1 multiplexer                             : 1
+ 17-bit 21-to-1 multiplexer                            : 1
+ 2-bit 2-to-1 multiplexer                              : 12
+ 3-bit 2-to-1 multiplexer                              : 6
+ 5-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 2
+# FSMs                                                 : 1
+# Xors                                                 : 4
+ 1-bit xor16                                           : 1
+ 1-bit xor8                                            : 1
+ 17-bit xor2                                           : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <tBlaze/tramelblaze/FSM_0> on signal <stateQ[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 1000  | 1000
+ 0100  | 0100
+ 0010  | 0010
+ 0011  | 0011
+ 0101  | 0101
+ 0110  | 0110
+ 1101  | 1101
+ 1100  | 1100
+ 1011  | 1011
+ 1010  | 1010
+ 0111  | 0111
+ 1110  | 1110
+ 1111  | 1111
+ 1001  | 1001
+-------------------
+
+Optimizing unit <LD_REG> ...
+
+Optimizing unit <TXRDY_CSULB_CECS_460> ...
+
+Optimizing unit <transmit_engine> ...
+
+Optimizing unit <Bit_Time_Counter> ...
+
+Optimizing unit <Shift_Register> ...
+
+Optimizing unit <tramelblaze> ...
+
+Optimizing unit <ADDR_DECODE> ...
+WARNING:Xst:2677 - Node <tBlaze/tramelblaze/readstrobeQ> of sequential type is unconnected in block <TXRDY_CSULB_CECS_460>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TXRDY_CSULB_CECS_460, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 417
+ Flip-Flops                                            : 417
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : TXRDY_CSULB_CECS_460.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1356
+#      GND                         : 4
+#      INV                         : 35
+#      LUT1                        : 32
+#      LUT2                        : 46
+#      LUT3                        : 104
+#      LUT4                        : 61
+#      LUT5                        : 89
+#      LUT6                        : 628
+#      MUXCY                       : 121
+#      MUXF7                       : 82
+#      MUXF8                       : 32
+#      VCC                         : 4
+#      XORCY                       : 118
+# FlipFlops/Latches                : 417
+#      FDC                         : 72
+#      FDCE                        : 329
+#      FDP                         : 2
+#      FDPE                        : 14
+# RAMS                             : 4
+#      RAMB18E1                    : 2
+#      RAMB36E1                    : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 25
+#      IBUF                        : 8
+#      OBUF                        : 17
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             417  out of  126800     0%  
+ Number of Slice LUTs:                  995  out of  63400     1%  
+    Number used as Logic:               995  out of  63400     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1020
+   Number with an unused Flip Flop:     603  out of   1020    59%  
+   Number with an unused LUT:            25  out of   1020     2%  
+   Number of fully used LUT-FF pairs:   392  out of   1020    38%  
+   Number of unique control sets:        17
+
+IO Utilization: 
+ Number of IOs:                          26
+ Number of bonded IOBs:                  26  out of    210    12%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                3  out of    135     2%  
+    Number using Block RAM only:          3
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 421   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                   | Buffer(FF name)                                                                                                                                                | Load  |
+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+tBlaze/your_instance_name/N1(tBlaze/your_instance_name/XST_GND:G)| NONE(tBlaze/your_instance_name/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/v6_init.ram/NO_BMM_INFO.SP.SIMPLE_PRIM36.ram)| 4     |
+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 6.061ns (Maximum Frequency: 164.997MHz)
+   Minimum input arrival time before clock: 3.927ns
+   Maximum output required time after clock: 3.507ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.061ns (frequency: 164.997MHz)
+  Total number of paths / destination ports: 3250820 / 1214
+-------------------------------------------------------------------------
+Delay:               6.061ns (Levels of Logic = 22)
+  Source:            tBlaze/tramelblaze/regfile_15_176 (FF)
+  Destination:       tBlaze/tramelblaze/zeroQ (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: tBlaze/tramelblaze/regfile_15_176 to tBlaze/tramelblaze/zeroQ
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.361   0.703  tBlaze/tramelblaze/regfile_15_176 (tBlaze/tramelblaze/regfile_15_176)
+     LUT6:I0->O            1   0.097   0.000  tBlaze/tramelblaze/Mmux_regB_51 (tBlaze/tramelblaze/Mmux_regB_51)
+     MUXF7:I1->O           1   0.279   0.000  tBlaze/tramelblaze/Mmux_regB_4_f7 (tBlaze/tramelblaze/Mmux_regB_4_f7)
+     MUXF8:I0->O           8   0.218   0.411  tBlaze/tramelblaze/Mmux_regB_2_f8 (tBlaze/tramelblaze/regB<0>)
+     LUT4:I2->O            1   0.097   0.000  tBlaze/tramelblaze/Madd_n0394_lut<0> (tBlaze/tramelblaze/Madd_n0394_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  tBlaze/tramelblaze/Madd_n0394_cy<0> (tBlaze/tramelblaze/Madd_n0394_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<1> (tBlaze/tramelblaze/Madd_n0394_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<2> (tBlaze/tramelblaze/Madd_n0394_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<3> (tBlaze/tramelblaze/Madd_n0394_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<4> (tBlaze/tramelblaze/Madd_n0394_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<5> (tBlaze/tramelblaze/Madd_n0394_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<6> (tBlaze/tramelblaze/Madd_n0394_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<7> (tBlaze/tramelblaze/Madd_n0394_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<8> (tBlaze/tramelblaze/Madd_n0394_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  tBlaze/tramelblaze/Madd_n0394_cy<9> (tBlaze/tramelblaze/Madd_n0394_cy<9>)
+     XORCY:CI->O           3   0.370   0.305  tBlaze/tramelblaze/Madd_n0394_xor<10> (tBlaze/tramelblaze/n0394<10>)
+     LUT1:I0->O            1   0.097   0.000  tBlaze/tramelblaze/Madd_BUS_0004_GND_15_o_add_63_OUT_cy<10>_rt (tBlaze/tramelblaze/Madd_BUS_0004_GND_15_o_add_63_OUT_cy<10>_rt)
+     MUXCY:S->O            1   0.353   0.000  tBlaze/tramelblaze/Madd_BUS_0004_GND_15_o_add_63_OUT_cy<10> (tBlaze/tramelblaze/Madd_BUS_0004_GND_15_o_add_63_OUT_cy<10>)
+     XORCY:CI->O           1   0.370   0.295  tBlaze/tramelblaze/Madd_BUS_0004_GND_15_o_add_63_OUT_xor<11> (tBlaze/tramelblaze/BUS_0004_GND_15_o_add_63_OUT<11>)
+     LUT6:I5->O            3   0.097   0.389  tBlaze/tramelblaze/Mmux_alu_out77 (tBlaze/tramelblaze/Mmux_alu_out76)
+     LUT5:I3->O            1   0.097   0.379  tBlaze/tramelblaze/Mmux_alu_out169_SW0 (N167)
+     LUT6:I4->O            1   0.097   0.379  tBlaze/tramelblaze/Mmux_zeroX112 (tBlaze/tramelblaze/Mmux_zeroX111)
+     LUT6:I4->O            1   0.097   0.000  tBlaze/tramelblaze/Mmux_zeroX113 (tBlaze/tramelblaze/zeroX)
+     FDCE:D                    0.008          tBlaze/tramelblaze/zeroQ
+    ----------------------------------------
+    Total                      6.061ns (3.198ns logic, 2.863ns route)
+                                       (52.8% logic, 47.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 15464 / 38
+-------------------------------------------------------------------------
+Offset:              3.927ns (Levels of Logic = 30)
+  Source:            baud<2> (PAD)
+  Destination:       txeng/timeCount/count_18 (FF)
+  Destination Clock: clk rising
+
+  Data Path: baud<2> to txeng/timeCount/count_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.001   0.635  baud_2_IBUF (baud_2_IBUF)
+     LUT4:I0->O            1   0.097   0.683  txeng/timeCount/baud_count<19>1 (txeng/timeCount/baud_count<0>)
+     LUT6:I1->O            1   0.097   0.000  txeng/timeCount/Mcompar_BTU_lut<0> (txeng/timeCount/Mcompar_BTU_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  txeng/timeCount/Mcompar_BTU_cy<0> (txeng/timeCount/Mcompar_BTU_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcompar_BTU_cy<1> (txeng/timeCount/Mcompar_BTU_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcompar_BTU_cy<2> (txeng/timeCount/Mcompar_BTU_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcompar_BTU_cy<3> (txeng/timeCount/Mcompar_BTU_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcompar_BTU_cy<4> (txeng/timeCount/Mcompar_BTU_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcompar_BTU_cy<5> (txeng/timeCount/Mcompar_BTU_cy<5>)
+     MUXCY:CI->O          22   0.253   0.475  txeng/timeCount/Mcompar_BTU_cy<6> (txeng/btu)
+     LUT3:I1->O            1   0.097   0.000  txeng/timeCount/Mcount_count_lut<0> (txeng/timeCount/Mcount_count_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  txeng/timeCount/Mcount_count_cy<0> (txeng/timeCount/Mcount_count_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<1> (txeng/timeCount/Mcount_count_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<2> (txeng/timeCount/Mcount_count_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<3> (txeng/timeCount/Mcount_count_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<4> (txeng/timeCount/Mcount_count_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<5> (txeng/timeCount/Mcount_count_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<6> (txeng/timeCount/Mcount_count_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<7> (txeng/timeCount/Mcount_count_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<8> (txeng/timeCount/Mcount_count_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<9> (txeng/timeCount/Mcount_count_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<10> (txeng/timeCount/Mcount_count_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<11> (txeng/timeCount/Mcount_count_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<12> (txeng/timeCount/Mcount_count_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<13> (txeng/timeCount/Mcount_count_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<14> (txeng/timeCount/Mcount_count_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<15> (txeng/timeCount/Mcount_count_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  txeng/timeCount/Mcount_count_cy<16> (txeng/timeCount/Mcount_count_cy<16>)
+     MUXCY:CI->O           0   0.023   0.000  txeng/timeCount/Mcount_count_cy<17> (txeng/timeCount/Mcount_count_cy<17>)
+     XORCY:CI->O           1   0.370   0.000  txeng/timeCount/Mcount_count_xor<18> (txeng/timeCount/Mcount_count18)
+     FDC:D                     0.008          txeng/timeCount/count_18
+    ----------------------------------------
+    Total                      3.927ns (2.135ns logic, 1.793ns route)
+                                       (54.4% logic, 45.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 187 / 2
+-------------------------------------------------------------------------
+Offset:              3.507ns (Levels of Logic = 7)
+  Source:            tBlaze/tramelblaze/regfile_15_191 (FF)
+  Destination:       LED<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: tBlaze/tramelblaze/regfile_15_191 to LED<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.361   0.703  tBlaze/tramelblaze/regfile_15_191 (tBlaze/tramelblaze/regfile_15_191)
+     LUT6:I0->O            1   0.097   0.000  tBlaze/tramelblaze/Mmux_regB_513 (tBlaze/tramelblaze/Mmux_regB_513)
+     MUXF7:I1->O           1   0.279   0.000  tBlaze/tramelblaze/Mmux_regB_4_f7_5 (tBlaze/tramelblaze/Mmux_regB_4_f76)
+     MUXF8:I0->O           5   0.218   0.314  tBlaze/tramelblaze/Mmux_regB_2_f8_5 (tBlaze/tramelblaze/regB<15>)
+     LUT3:I2->O            5   0.097   0.575  tBlaze/tramelblaze/Mmux_alu_b71 (tBlaze/tramelblaze/alu_b<15>)
+     LUT6:I2->O            3   0.097   0.389  addr/Mmux_READS017 (addr/Mmux_READS017)
+     LUT5:I3->O            1   0.097   0.279  addr/Mmux_WRITES081 (LED_0_OBUF)
+     OBUF:I->O                 0.000          LED_0_OBUF (LED<0>)
+    ----------------------------------------
+    Total                      3.507ns (1.246ns logic, 2.261ns route)
+                                       (35.5% logic, 64.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.061|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 22.32 secs
+ 
+--> 
+
+Total memory usage is 368928 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

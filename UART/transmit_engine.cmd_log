@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/transmit_engine.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/transmit_engine.syr" 
+xst -intstyle ise -ifn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/transmit_engine.xst" -ofn "D:/SCHOOL WORK/CECS 460 Labs/UART - Copy/transmit_engine.syr" 

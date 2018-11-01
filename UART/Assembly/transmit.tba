@@ -1,0 +1,140 @@
+; UART TRANSMIT
+
+; ****************************************************
+; 	DECLARE CONSTANTS
+; ****************************************************
+; R0 -> DISPLAY THE LETTER
+; R1
+; R2 -> MAX VALUE
+; R3
+; R4 -> LEDS
+; R5
+; R6 
+; R7 -> COUNTER FOR EACH LETTER IN STRING
+; R8
+; R9 -> TEMPORARILY STORE STUFF
+; RA
+; RB
+; RC
+; RD
+; RE
+; RF
+
+LEDS		EQU  R4
+reset 		EQU  00  
+
+ANYADRS     EQU  0468
+MYREG 		EQU  R9		;REGISTER TO DISPLAY VALUE
+PC			EQU  R7		;REGISTER TO COUNT STRING CHARACTERS
+MAX			EQU  R2		;MAXIMUM STRING PRINTED
+STR 		EQU  R0
+
+
+
+; ASCII DATA CONSTANTS
+
+ASCII_C		EQU  43
+ASCII_S		EQU  53
+ASCII_U		EQU  55
+ASCII_L		EQU  4C
+ASCII_B		EQU  42
+ASCII_E     EQU  45
+
+ASCII_CR	EQU	 0D
+ASCII_NL    EQU  0A
+ASCII_SPACE EQU  20
+
+	; ***************************************************
+	; 	 INITIALIZATIONS
+	; ***************************************************
+START	ENINT
+
+	LOAD R0, ASCII_C 	;LOAD R0 WITH C
+	STORE R0, 0000		;STORE R0 INTO M[0]
+	
+	LOAD R0, ASCII_S 	;LOAD R0 WITH S
+	STORE R0, 0001		;STORE R0 INTO M[1]
+	
+	LOAD R0, ASCII_U 	;LOAD R0 WITH U
+	STORE R0, 0002		;STORE R0 INTO M[2]
+	
+	LOAD R0, ASCII_L	;LOAD R0 WITH L
+	STORE R0, 0003		;STORE R0 INTO M[3]
+	
+	LOAD R0, ASCII_B 	;LOAD R0 WITH B
+	STORE R0, 0004		;STORE R0 INTO M[4]
+	
+	LOAD R0, ASCII_CR   ;LOAD R0 WITH CR
+	STORE R0, 0010      ;STORE R0 IN M[16]
+	
+	LOAD R0, ASCII_NL	;LOAD R0 WITH NL
+	STORE R0, 0011		;STORE 60 IN M[17]
+	
+	
+	LOAD PC, 0001		;LOAD PC WITH A 1
+	LOAD MAX, 0005		;MAX VALUE IS 5 (CSULB)
+	
+	; ***************************************************
+	; 		MAIN LOOP
+	; ***************************************************
+	
+MAIN
+	OUTPUT LEDS, 0001	 ;OUPUT AT 0X01; 
+	SL1	   LEDS
+	JUMP MAIN
+	
+	ADDRESS 0300
+		
+
+		
+ISR
+	FETCH  	STR, PC	    
+	OUTPUT 	STR, 0000	;display the character at 0x00
+	COMP   	PC, MAX		;compare the maximum value to the counter
+	JUMPZ  	FULL		
+	ADD 	PC, 0001	;increment by 1
+	RETEN
+	
+FULL	;this will reset the counter when it reaches the maximum
+	LOAD PC, 0000		;reset it back to 0
+	RETEN
+
+
+BINTOASCII
+		LOAD 	RE, R2
+		LOAD 	RD, 2710
+		CALL	FINDIT
+
+		ADD 	RB, 0030
+		STORE 	RB, 0006
+		LOAD 	RD, 03E8
+		CALL	FINDIT
+		
+		ADD 	RB, 0030
+		STORE 	RB, 0005
+		LOAD 	RD, 0064
+		CALL	FINDIT
+		
+		ADD 	RB, 0030
+		STORE 	RB, 0004
+		LOAD 	RD, 000A
+		CALL	FINDIT
+		
+		ADD 	RB, 0030
+		STORE 	RB, 0003
+		ADD 	RE, 0030
+		STORE 	RE, 0002
+		
+		RETEN
+		
+FINDIT
+		LOAD RB, 0000
+		SUB  RE, RD
+		RETEN
+		
+		
+ENDIT	JUMP ISR
+	END
+		
+	
+	

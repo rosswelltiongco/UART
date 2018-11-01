@@ -1,0 +1,7 @@
+verilog work "Shift_Register.v"
+verilog work "Right_Regs.v"
+verilog work "Bit_Time_Counter.v"
+verilog work "Bit_Decoder.v"
+verilog work "Bit_Counter.v"
+verilog work "UART.v"
+verilog work "C:/Verilog/14.6/ISE_DS/ISE//verilog/src/glbl.v"

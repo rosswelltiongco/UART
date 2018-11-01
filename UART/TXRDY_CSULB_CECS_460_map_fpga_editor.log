@@ -1,0 +1,17 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.68d
+#Current Working Directory:
+#:D   D:\SCHOOL WORK\CECS 460 Labs\UART
+#Date/Time:
+#:T   Mon Oct 22 05:31:09 2018
+#------------------------------
+	#Reading TXRDY_CSULB_CECS_460_map.ncd...
+	#Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Verilog\14.6\ISE_DS\ISE\.
+	#   "TXRDY_CSULB_CECS_460" is an NCD, version 3.2, device xc7a100t, package csg324, speed -3
+	#Design creation date: 2018.10.22.12.17.14
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes

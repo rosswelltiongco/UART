@@ -1,0 +1,187 @@
+               ; UART TRANSMIT
+               
+               ; ****************************************************
+               ; 	DECLARE CONSTANTS
+               ; ****************************************************
+               ; R0 -> DISPLAY THE LETTER
+               ; R1
+               ; R2 -> MAX VALUE
+               ; R3
+               ; R4 -> LEDS
+               ; R5
+               ; R6 
+               ; R7 -> COUNTER FOR EACH LETTER IN STRING
+               ; R8
+               ; R9 -> TEMPORARILY STORE STUFF
+               ; RA
+               ; RB
+               ; RC
+               ; RD
+               ; RE
+               ; RF
+               
+               LEDS		EQU  R4
+               reset 		EQU  00  
+               
+               ANYADRS     EQU  0468
+               MYREG 		EQU  R9		;REGISTER TO DISPLAY VALUE
+               PC			EQU  R7		;REGISTER TO COUNT STRING CHARACTERS
+               MAX			EQU  R2		;MAXIMUM STRING PRINTED
+               STR 		EQU  R0
+               
+               
+               
+               ; ASCII DATA CONSTANTS
+               
+               ASCII_C		EQU  43
+               ASCII_S		EQU  53
+               ASCII_U		EQU  55
+               ASCII_L		EQU  4C
+               ASCII_B		EQU  42
+               ASCII_E     EQU  45
+               
+               ASCII_CR	EQU	 0D
+               ASCII_NL    EQU  0A
+               ASCII_SPACE EQU  20
+               
+               	; ***************************************************
+               	; 	 INITIALIZATIONS
+               	; ***************************************************
+               START	ENINT
+0000 1E00               
+               	LOAD R0, ASCII_C 	;LOAD R0 WITH C
+0001 AE00 43
+               	STORE R0, 0000		;STORE R0 INTO M[0]
+0003 F400 0000
+               	
+               	LOAD R0, ASCII_S 	;LOAD R0 WITH S
+0005 AE00 53
+               	STORE R0, 0001		;STORE R0 INTO M[1]
+0007 F400 0001
+               	
+               	LOAD R0, ASCII_U 	;LOAD R0 WITH U
+0009 AE00 55
+               	STORE R0, 0002		;STORE R0 INTO M[2]
+000B F400 0002
+               	
+               	LOAD R0, ASCII_L	;LOAD R0 WITH L
+000D AE00 4C
+               	STORE R0, 0003		;STORE R0 INTO M[3]
+000F F400 0003
+               	
+               	LOAD R0, ASCII_B 	;LOAD R0 WITH B
+0011 AE00 42
+               	STORE R0, 0004		;STORE R0 INTO M[4]
+0013 F400 0004
+               	
+               	LOAD R0, ASCII_CR   ;LOAD R0 WITH CR
+0015 AE00 0D
+               	STORE R0, 0010      ;STORE R0 IN M[16]
+0017 F400 0010
+               	
+               	LOAD R0, ASCII_NL	;LOAD R0 WITH NL
+0019 AE00 0A
+               	STORE R0, 0011		;STORE 60 IN M[17]
+001B F400 0011
+               	
+               	
+               	LOAD PC, 0001		;LOAD PC WITH A 1
+001D AE07 0001
+               	LOAD MAX, 0005		;MAX VALUE IS 5 (CSULB)
+001F AE02 0005
+               	
+               	; ***************************************************
+               	; 		MAIN LOOP
+               	; ***************************************************
+               	
+               MAIN
+               	OUTPUT LEDS, 0001	 ;OUPUT AT 0X01; 
+0021 B804 0001
+               	SL1	   LEDS
+0023 4E04
+               	JUMP MAIN
+0024 A400 0021
+               	
+               	ADDRESS 0300
+               		
+               
+               		
+               ISR
+               	FETCH  	STR, PC	    
+7270
+               	OUTPUT 	STR, 0000	;display the character at 0x00
+0301 B800 0000
+               	COMP   	PC, MAX		;compare the maximum value to the counter
+1A27
+               	JUMPZ  	FULL		
+0304 AA00 0309
+               	ADD 	PC, 0001	;increment by 1
+0306 8207 0001
+               	RETEN
+0308 4600               	
+               FULL	;this will reset the counter when it reaches the maximum
+               	LOAD PC, 0000		;reset it back to 0
+0309 AE07 0000
+               	RETEN
+030B 4600               
+               
+               BINTOASCII
+               		LOAD 	RE, R2
+302E
+               		LOAD 	RD, 2710
+030D AE0D 2710
+               		CALL	FINDIT
+030F 8E00 0332
+               
+               		ADD 	RB, 0030
+0311 820B 0030
+               		STORE 	RB, 0006
+0313 F40B 0006
+               		LOAD 	RD, 03E8
+0315 AE0D 03E8
+               		CALL	FINDIT
+0317 8E00 0332
+               		
+               		ADD 	RB, 0030
+0319 820B 0030
+               		STORE 	RB, 0005
+031B F40B 0005
+               		LOAD 	RD, 0064
+031D AE0D 0064
+               		CALL	FINDIT
+031F 8E00 0332
+               		
+               		ADD 	RB, 0030
+0321 820B 0030
+               		STORE 	RB, 0004
+0323 F40B 0004
+               		LOAD 	RD, 000A
+0325 AE0D 000A
+               		CALL	FINDIT
+0327 8E00 0332
+               		
+               		ADD 	RB, 0030
+0329 820B 0030
+               		STORE 	RB, 0003
+032B F40B 0003
+               		ADD 	RE, 0030
+032D 820E 0030
+               		STORE 	RE, 0002
+032F F40E 0002
+               		
+               		RETEN
+0331 4600               		
+               FINDIT
+               		LOAD RB, 0000
+0332 AE0B 0000
+               		SUB  RE, RD
+5EDE
+               		RETEN
+0335 4600               		
+               		
+               ENDIT	JUMP ISR
+0336 A400 0300
+               	END
+               		
+               	
+               	

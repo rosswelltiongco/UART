@@ -1,0 +1,536 @@
+Release 14.6 - xst P.68d (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
+ 
+--> Reading design: TRANSMIT_ENG.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TRANSMIT_ENG.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TRANSMIT_ENG"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : TRANSMIT_ENG
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" into library work
+Parsing module <TRANSMIT_ENG>.
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 107: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 108: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 109: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 110: Concatenation with unsized literal; will interpret as 32 bits
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 107: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 108: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 109: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 110: Concatenation with unsized literal; will interpret as 32 bits
+
+Elaborating module <TRANSMIT_ENG>.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 135: Result of 19-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 136: Result of 17-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 137: Result of 16-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 138: Result of 15-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 139: Result of 14-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 140: Result of 13-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 141: Result of 12-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 142: Result of 11-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 143: Result of 10-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 144: Result of 9-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 145: Result of 8-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 146: Result of 7-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v" Line 147: Result of 19-bit expression is truncated to fit in 1-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <TRANSMIT_ENG>.
+    Related source file is "D:\SCHOOL WORK\CECS 460 Labs\UART\TRANSMIT_ENG.v".
+    Found 1-bit register for signal <writeD1_w>.
+    Found 1-bit register for signal <TXRDY>.
+    Found 1-bit register for signal <doit_w>.
+    Found 1-bit register for signal <doneD1_w>.
+    Found 19-bit register for signal <count>.
+    Found 4-bit register for signal <tally>.
+    Found 8-bit register for signal <load_data_w>.
+    Found 11-bit register for signal <store>.
+    Found 1-bit register for signal <TX>.
+    Found 19-bit adder for signal <count[18]_GND_1_o_add_16_OUT> created at line 159.
+    Found 4-bit adder for signal <tally[3]_GND_1_o_add_20_OUT> created at line 183.
+    Found 4x1-bit Read Only RAM for signal <btu_w_PWR_2_o_Mux_23_o>
+WARNING:Xst:737 - Found 1-bit latch for signal <n_tally<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <n_tally<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <n_tally<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <n_tally<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 19-bit comparator equal for signal <btu_w> created at line 130
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  47 D-type flip-flop(s).
+	inferred   4 Latch(s).
+	inferred   1 Comparator(s).
+	inferred  12 Multiplexer(s).
+Unit <TRANSMIT_ENG> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x1-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 2
+ 19-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 9
+ 1-bit register                                        : 5
+ 11-bit register                                       : 1
+ 19-bit register                                       : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 1
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Comparators                                          : 1
+ 19-bit comparator equal                               : 1
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 10
+ 11-bit 2-to-1 multiplexer                             : 1
+ 19-bit 2-to-1 multiplexer                             : 1
+# Xors                                                 : 2
+ 1-bit xor8                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <TRANSMIT_ENG>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_btu_w_PWR_2_o_Mux_23_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 1-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(btu_w,doit_w)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <TRANSMIT_ENG> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x1-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 19-bit up counter                                     : 1
+# Registers                                            : 28
+ Flip-Flops                                            : 28
+# Comparators                                          : 1
+ 19-bit comparator equal                               : 1
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 10
+ 11-bit 2-to-1 multiplexer                             : 1
+# Xors                                                 : 2
+ 1-bit xor8                                            : 1
+ 8-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <TRANSMIT_ENG> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TRANSMIT_ENG, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 47
+ Flip-Flops                                            : 47
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : TRANSMIT_ENG.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 88
+#      GND                         : 1
+#      LUT2                        : 3
+#      LUT3                        : 8
+#      LUT4                        : 3
+#      LUT5                        : 7
+#      LUT6                        : 28
+#      MUXCY                       : 18
+#      MUXF7                       : 1
+#      XORCY                       : 19
+# FlipFlops/Latches                : 51
+#      FDC                         : 27
+#      FDCE                        : 18
+#      FDE                         : 1
+#      FDPE                        : 1
+#      LD                          : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 19
+#      IBUF                        : 17
+#      OBUF                        : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              51  out of  126800     0%  
+ Number of Slice LUTs:                   49  out of  63400     0%  
+    Number used as Logic:                49  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     62
+   Number with an unused Flip Flop:      11  out of     62    17%  
+   Number with an unused LUT:            13  out of     62    20%  
+   Number of fully used LUT-FF pairs:    38  out of     62    61%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    210     9%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------------+------------------------+-------+
+Clock Signal                                               | Clock buffer(FF name)  | Load  |
+-----------------------------------------------------------+------------------------+-------+
+CLK                                                        | BUFGP                  | 47    |
+Mram_btu_w_PWR_2_o_Mux_23_o(Mram_btu_w_PWR_2_o_Mux_23_o1:O)| NONE(*)(n_tally_0)     | 4     |
+-----------------------------------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.992ns (Maximum Frequency: 334.263MHz)
+   Minimum input arrival time before clock: 2.662ns
+   Maximum output required time after clock: 0.645ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 2.992ns (frequency: 334.263MHz)
+  Total number of paths / destination ports: 4668 / 46
+-------------------------------------------------------------------------
+Delay:               2.992ns (Levels of Logic = 21)
+  Source:            count_8 (FF)
+  Destination:       count_18 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: count_8 to count_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.361   0.698  count_8 (count_8)
+     LUT6:I0->O           26   0.097   0.617  Mram_btu_w_PWR_2_o_Mux_23_o24 (Mram_btu_w_PWR_2_o_Mux_23_o23)
+     LUT6:I3->O            1   0.097   0.000  Mcount_count_lut<0> (Mcount_count_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  Mcount_count_cy<0> (Mcount_count_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<1> (Mcount_count_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<2> (Mcount_count_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<3> (Mcount_count_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<4> (Mcount_count_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<5> (Mcount_count_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<6> (Mcount_count_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<7> (Mcount_count_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<8> (Mcount_count_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<9> (Mcount_count_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<10> (Mcount_count_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<11> (Mcount_count_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<12> (Mcount_count_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<13> (Mcount_count_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<14> (Mcount_count_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<15> (Mcount_count_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<16> (Mcount_count_cy<16>)
+     MUXCY:CI->O           0   0.023   0.000  Mcount_count_cy<17> (Mcount_count_cy<17>)
+     XORCY:CI->O           1   0.370   0.000  Mcount_count_xor<18> (Mcount_count18)
+     FDC:D                     0.008          count_18
+    ----------------------------------------
+    Total                      2.992ns (1.677ns logic, 1.315ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 959 / 98
+-------------------------------------------------------------------------
+Offset:              2.662ns (Levels of Logic = 22)
+  Source:            BAUD<2> (PAD)
+  Destination:       count_18 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: BAUD<2> to count_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.683  BAUD_2_IBUF (BAUD_2_IBUF)
+     LUT5:I0->O           26   0.097   0.662  Mram_btu_w_PWR_2_o_Mux_23_o23 (Mram_btu_w_PWR_2_o_Mux_23_o22)
+     LUT6:I2->O            1   0.097   0.000  Mcount_count_lut<0> (Mcount_count_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  Mcount_count_cy<0> (Mcount_count_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<1> (Mcount_count_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<2> (Mcount_count_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<3> (Mcount_count_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<4> (Mcount_count_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<5> (Mcount_count_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<6> (Mcount_count_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<7> (Mcount_count_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<8> (Mcount_count_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<9> (Mcount_count_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<10> (Mcount_count_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<11> (Mcount_count_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<12> (Mcount_count_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<13> (Mcount_count_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<14> (Mcount_count_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<15> (Mcount_count_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_count_cy<16> (Mcount_count_cy<16>)
+     MUXCY:CI->O           0   0.023   0.000  Mcount_count_cy<17> (Mcount_count_cy<17>)
+     XORCY:CI->O           1   0.370   0.000  Mcount_count_xor<18> (Mcount_count18)
+     FDC:D                     0.008          count_18
+    ----------------------------------------
+    Total                      2.662ns (1.317ns logic, 1.345ns route)
+                                       (49.5% logic, 50.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Mram_btu_w_PWR_2_o_Mux_23_o'
+  Total number of paths / destination ports: 16 / 4
+-------------------------------------------------------------------------
+Offset:              2.325ns (Levels of Logic = 4)
+  Source:            BAUD<2> (PAD)
+  Destination:       n_tally_3 (LATCH)
+  Destination Clock: Mram_btu_w_PWR_2_o_Mux_23_o falling
+
+  Data Path: BAUD<2> to n_tally_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.683  BAUD_2_IBUF (BAUD_2_IBUF)
+     LUT5:I0->O           26   0.097   0.662  Mram_btu_w_PWR_2_o_Mux_23_o23 (Mram_btu_w_PWR_2_o_Mux_23_o22)
+     LUT4:I0->O            2   0.097   0.688  Mram_btu_w_PWR_2_o_Mux_23_o25 (Mram_btu_w_PWR_2_o_Mux_23_o_bdd0)
+     LUT5:I0->O            1   0.097   0.000  btu_w_tally[3]_Mux_22_o1 (btu_w_tally[3]_Mux_22_o)
+     LD:D                     -0.028          n_tally_3
+    ----------------------------------------
+    Total                      2.325ns (0.292ns logic, 2.033ns route)
+                                       (12.6% logic, 87.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.645ns (Levels of Logic = 1)
+  Source:            TXRDY (FF)
+  Destination:       TXRDY (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: TXRDY to TXRDY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.361   0.283  TXRDY (TXRDY_OBUF)
+     OBUF:I->O                 0.000          TXRDY_OBUF (TXRDY)
+    ----------------------------------------
+    Total                      0.645ns (0.361ns logic, 0.283ns route)
+                                       (56.0% logic, 44.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------------------+---------+---------+---------+---------+
+                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------+---------+---------+---------+---------+
+CLK                        |    2.992|         |         |         |
+Mram_btu_w_PWR_2_o_Mux_23_o|         |    0.759|         |         |
+---------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Mram_btu_w_PWR_2_o_Mux_23_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |         |         |    2.654|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.74 secs
+ 
+--> 
+
+Total memory usage is 347380 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

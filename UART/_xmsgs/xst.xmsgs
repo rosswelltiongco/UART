@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\stack_ram.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">stack_ram</arg>&gt; remains a black box.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\scratch_ram.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">scratch_ram</arg>&gt; remains a black box.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"C:\Users\Rosswell\Documents\UART\UART\ipcore_dir\tb_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">tb_rom</arg>&gt; remains a black box.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" Line 50: Assignment to <arg fmt="%s" index="1">reads0</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v" Line 51: Assignment to <arg fmt="%s" index="1">reads2</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">READS0</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addr</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">READS1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addr</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">WRITES1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addr</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">READS2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addr</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">WRITES2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addr</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">READS3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addr</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\Rosswell\Documents\UART\UART\TXRDY_CSULB_CECS_460.v</arg>&quot; line <arg fmt="%s" index="2">49</arg>: Output port &lt;<arg fmt="%s" index="3">WRITES3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">addr</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram__n2366</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">tBlaze/tramelblaze/readstrobeQ</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TXRDY_CSULB_CECS_460</arg>&gt;.
+</msg>
+
+</messages>

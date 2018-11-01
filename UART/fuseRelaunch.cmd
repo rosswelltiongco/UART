@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Rosswell/Downloads/UART - Copy/TXRDY_CSULB_CECS_460_TEST_isim_beh.exe" -prj "C:/Users/Rosswell/Downloads/UART - Copy/TXRDY_CSULB_CECS_460_TEST_beh.prj" "work.TXRDY_CSULB_CECS_460_TEST" "work.glbl" 
