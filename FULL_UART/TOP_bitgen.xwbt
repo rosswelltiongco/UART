@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Rosswell\Downloads\rios uart\SOC-UART-master\SOC_UART\TOP.ncd
+OUTFILE=C:\Users\Rosswell\Downloads\rios uart\SOC-UART-master\SOC_UART\TOP.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=C:\Users\Rosswell\Downloads\rios uart\SOC-UART-master\SOC_UART
+LICENSE=WebPack
+USER_INFO=211383700_0_0_936

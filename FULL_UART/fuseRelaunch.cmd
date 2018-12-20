@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Michael Rios/Desktop/SOC-UART/SOC_UART/receive_tf_isim_beh.exe" -prj "C:/Users/Michael Rios/Desktop/SOC-UART/SOC_UART/receive_tf_beh.prj" "work.receive_tf" "work.glbl" 

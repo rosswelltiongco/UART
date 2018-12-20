@@ -1,0 +1,1240 @@
+               ; --------------------------------------------------------
+               ;
+               ; Name:     Michael Rios
+               ; Class:    CECS 460 - System On Chip Design
+               ; Date:     April 24, 2018
+               ;
+               ;   This program prints a header to the terminal, & a
+               ;   prompt. An '*' will display my hometown, an '@' will
+               ;   print the number of chars that have been printed
+               ;
+               ; --------------------------------------------------------
+               ascii_null     EQU   0000
+               ascii_BS       EQU   0008  ; Back Space
+               ascii_LF       EQU   000A  ; <LF> Line Feed
+               ascii_CR       EQU   000D  ; <CR> Carriage return
+               ascii_aster    EQU   002A  ; '*'  asterisk
+               ascii_AT       EQU   0040  ; '@'  at
+               ascii_DOT      EQU   002E  ; '.'  period
+               ascii_EQ       EQU   003D  ; '='  equal
+               ascii_DASH     EQU   002D  ; '-'  dash
+               ascii_COL      EQU   003A  ; ':'  colon
+               ascii_SP       EQU   0020  ; ' '  space
+               ascii_comma    EQU   002C  ; ','  comma
+               ascii_0        EQU   0030
+               ascii_1        EQU   0031
+               ascii_2        EQU   0032
+               ascii_3        EQU   0033
+               ascii_4        EQU   0034
+               ascii_5        EQU   0035
+               ascii_6        EQU   0036
+               ascii_7        EQU   0037
+               ascii_8        EQU   0038
+               ascii_9        EQU   0039
+               ascii_A        EQU   0041
+               ascii_B        EQU   0042
+               ascii_C        EQU   0043
+               ascii_D        EQU   0044
+               ascii_E        EQU   0045
+               ascii_F        EQU   0046
+               ascii_G        EQU   0047
+               ascii_H        EQU   0048
+               ascii_I        EQU   0049
+               ascii_J        EQU   004A
+               ascii_K        EQU   004B
+               ascii_L        EQU   004C
+               ascii_M        EQU   004D
+               ascii_N        EQU   004E
+               ascii_O        EQU   004F
+               ascii_P        EQU   0050
+               ascii_Q        EQU   0051
+               ascii_R        EQU   0052
+               ascii_S        EQU   0053
+               ascii_T        EQU   0054
+               ascii_U        EQU   0055
+               ascii_V        EQU   0056
+               ascii_W        EQU   0057
+               ascii_X        EQU   0058
+               ascii_Y        EQU   0059
+               ascii_Z        EQU   005A
+               
+               forty          EQU   0028
+               ; --------------------------
+               ;     Scratchpad Addresses
+               ; --------------------------
+               start_banner    EQU     0000
+               end_banner      EQU     0098
+               
+               start_prompt    EQU     0098
+               end_prompt      EQU     00A4
+               
+               start_hometown  EQU     00A4
+               end_hometown    EQU     00BD
+               
+               start_bs        EQU     00BD
+               end_bs          EQU     00C0
+               
+               start_crlf      EQU     00C0
+               end_crlf        EQU     00C2
+               
+               COUNT_BEGIN     EQU     00C2
+               COUNT_TEN       EQU     00C2
+               COUNT_ONE       EQU     00C3
+               COUNT_END       EQU     00C4
+               
+               
+               TEMP            EQU     R0      ; temporary register
+               POINTER         EQU     R3      ; points to scratchRam addresses
+               STATUS          EQU     R1      ; register to store the status signals
+               DATA            EQU     R2      ; register to store the data received
+               LEDS            EQU     R4
+               
+               CASE   EQU RC   ; stores the current case of what's printing
+               
+               CHAR_COUNT EQU RD ; stores the count of the # of chars outputted
+               
+               ; used in delay subroutine to create .01s delay
+               DELAY_COUNT1    EQU     R5
+               DELAY_COUNT2    EQU     R6
+               
+               ; --------------------------
+               ; Initialization Section
+               ; --------------------------
+               Init
+                       ; initialize registers to 0
+                       LOAD    TEMP,           0000
+0000 AE00 0000
+                       LOAD    POINTER,        0000
+0002 AE03 0000
+                       LOAD    CHAR_COUNT,     0000
+0004 AE0D 0000
+                       LOAD    STATUS,         0000
+0006 AE01 0000
+                       LOAD    DATA,           0000
+0008 AE02 0000
+                       ; case is initialized to 1 because
+                       ; the banner is to print at startup
+                       LOAD    CASE,           0001
+000A AE0C 0001
+               
+               
+                       LOAD    DELAY_COUNT1,   0000
+000C AE05 0000
+                       LOAD    DELAY_COUNT2    0000
+000E AE06 0000
+                       LOAD    LEDS,           0001
+0010 AE04 0001
+               
+                       CALL    initialize_banner   ; load the necessary chars for header in scratchRam
+0012 8E00 032f
+                       CALL    initialize_prompt   ; load necessary chars for prompt
+0014 8E00 0455
+                       CALL    initialize_hometown
+0016 8E00 0492
+                       CALL    initialize_backspace
+0018 8E00 0510
+                       CALL    initialize_crlf
+001A 8E00 0520
+               
+                       LOAD    POINTER, 0000            ; reset the pointer to 0
+001C AE03 0000
+               
+                       ENINT
+001E 1E00               
+               
+               ; --------------------Main-------------------
+               ;
+               ;       Infinite Loop which waits for
+               ;       INTERRUPT AND OUTPUTS a walking LED
+               ;       to the Nexys 4 FPGA board
+               ;
+               ; -------------------------------------------
+               Main
+                       OUTPUT  LEDS, 0001      ; output to port 0001
+001F B804 0001
+                       RL      LEDS            ; shift LED left
+0021 4804
+                       CALL    Delay           ; wait .01
+0022 8E00 0028
+                       CALL    Delay           ; wait .01
+0024 8E00 0028
+                       JUMP    Main
+0026 A400 001f
+               
+               
+               ; --------------------Delay-------------------
+               ;
+               ;       Generates a 0.01s delay
+               ;       Assumes 100MHz board clock
+               ;
+               ; --------------------------------------------
+               Delay
+                       ADD     DELAY_COUNT1, 0001   ; add 1 to DELAY_COUNT1
+0028 8205 0001
+                       ADDC    DELAY_COUNT2, 0000   ; DELAY_COUNT1 rolls from FFFF -> 0000
+002A 8606 0000
+                       COMP    DELAY_COUNT2, 000F   ; check if at the end of delay
+002C 9806 000F
+                       JUMPNZ  Delay                ; if not -> keep counting
+002E AC00 0028
+                       LOAD    DELAY_COUNT1, 0000   ; else -> reset counts and return
+0030 AE05 0000
+                       LOAD    DELAY_COUNT2, 0000
+0032 AE06 0000
+                       RETURN
+0034 3A00               
+               ; -------------INTERRUPT--------------
+               ;
+               ;   Interrupt Service Routine that
+               ;   can be triggered by either the
+               ;   RXRDY or the TXRDY
+               ; ------------------------------------
+               
+                       ADDRESS 0300
+               ISR
+                       INPUT   STATUS, 0001
+0300 A201 0001
+                       AND     STATUS, 0003
+0302 8A01 0003
+               
+                       COMP    STATUS, 0003
+0304 9801 0003
+                       JUMPZ   GOT_BOTH
+0306 AA00 0311
+               
+                       COMP    STATUS, 0002        ; check if TXRDY is high
+0308 9801 0002
+                       CALLZ   GOT_TXRDY
+030A 9400 052b
+               
+                       COMP    STATUS, 0001        ; check if RXRDY is high
+030C 9801 0001
+                       CALLZ   GOT_RXRDY
+030E 9400 0576
+               
+                       RETEN
+0310 4600               
+               GOT_BOTH
+               
+                       CALL GOT_TXRDY
+0311 8E00 052b
+                       CALL GOT_RXRDY
+0313 8E00 0576
+                       RETEN
+0315 4600               
+               ; -------------BINARY_TO_ASCII--------------
+               ;
+               ;   CONVERTS THE COUNT TO AN ASCII #
+               ;   and stores in each decimal place value
+               ;   in the Scratch Pad Memory
+               ;
+               ; ------------------------------------------
+               BINARY_TO_ASCII
+                       LOAD    RE, CHAR_COUNT    ; load RE with counter
+30DE
+               
+               
+                       LOAD    RD, 000A       ; RD <- 10
+0317 AE0D 000A
+                       CALL    FIND_IT        ; Call find it to set *RB (number of 10s)
+0319 8E00 0324
+                       ADD     RB, 0030       ; add 0x0030 for ascii conversion
+031B 820B 0030
+                       STORE   RB, COUNT_TEN       ; store
+031D F40B 00C2
+               
+                       ; 1's left
+                       ADD     RE, 0030       ; add 0x0030 for ascii conversion
+031F 820E 0030
+                       STORE   RE, COUNT_ONE       ; store
+0321 F40E 00C3
+               
+               
+                       RETURN
+0323 3A00               
+               ; -----------------FIND_IT------------------
+               ;
+               ;   Helper function for BINARY_TO_ASCII
+               ;   implements division through subtraction
+               ;   tracks the # of 1s, 10s, 100s,...,10000s
+               ;
+               ; ------------------------------------------
+               FIND_IT
+                       LOAD    RB, 0000
+0324 AE0B 0000
+               
+               SUBTRACT
+                       SUB     RE, RD
+5EDE
+                       JUMPC   RESTORE_LAST
+0327 A600 032d
+                       ADD     RB, 0001
+0329 820B 0001
+                       JUMP    SUBTRACT
+032B A400 0326
+               
+               RESTORE_LAST
+                       ADD     RE, RD
+04DE
+                       RETURN
+032E 3A00               
+               initialize_banner
+                       LOAD    TEMP, ascii_DASH
+032F AE00 002D
+               x50     STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001       ; POINTER++
+0332 8203 0001
+                       ADD     CHAR_COUNT, 0001    ; COUNT++
+0334 820D 0001
+                       COMP    CHAR_COUNT, 0031    ; count == 49?
+0336 980D 0031
+                       JUMPC   x50
+0338 A600 0331
+                       LOAD    CHAR_COUNT, 0000
+033A AE0D 0000
+               
+                       COMP    POINTER, 0064
+033C 9803 0064
+                       JUMPNC  finish_banner
+033E A800 0448
+               
+                       LOAD    TEMP, ascii_CR
+0340 AE00 000D
+                       STORE   TEMP, POINTER       ; 50
+7630
+                       ADD     POINTER, 0001
+0343 8203 0001
+               
+                       LOAD    TEMP, ascii_LF
+0345 AE00 000A
+                       STORE   TEMP, POINTER       ; 51
+7630
+                       ADD     POINTER, 0001
+0348 8203 0001
+               
+                       ; 5 spaces
+                       LOAD    TEMP, ascii_SP
+034A AE00 0020
+                       STORE   TEMP, POINTER       ; 52
+7630
+                       ADD     POINTER, 0001
+034D 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+034F AE00 0020
+                       STORE   TEMP, POINTER       ; 53
+7630
+                       ADD     POINTER, 0001
+0352 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+0354 AE00 0020
+                       STORE   TEMP, POINTER       ; 54
+7630
+                       ADD     POINTER, 0001
+0357 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+0359 AE00 0020
+                       STORE   TEMP, POINTER       ; 55
+7630
+                       ADD     POINTER, 0001
+035C 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+035E AE00 0020
+                       STORE   TEMP, POINTER       ; 56
+7630
+                       ADD     POINTER, 0001
+0361 8203 0001
+               
+                       LOAD    TEMP, ascii_SP  ;M
+0363 AE00 0020
+                       STORE   TEMP, POINTER       ; 57
+7630
+                       ADD     POINTER, 0001
+0366 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ; I
+0368 AE00 0020
+                       STORE   TEMP, POINTER       ; 58
+7630
+                       ADD     POINTER, 0001
+036B 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ; C
+036D AE00 0020
+                       STORE   TEMP, POINTER       ; 59
+7630
+                       ADD     POINTER, 0001
+0370 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ; H
+0372 AE00 0020
+                       STORE   TEMP, POINTER       ; 60
+7630
+                       ADD     POINTER, 0001
+0375 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ; A
+0377 AE00 0020
+                       STORE   TEMP, POINTER       ; 61
+7630
+                       ADD     POINTER, 0001
+037A 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ; E
+037C AE00 0020
+                       STORE   TEMP, POINTER       ; 62
+7630
+                       ADD     POINTER, 0001
+037F 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ;L
+0381 AE00 0020
+                       STORE   TEMP, POINTER       ; 63
+7630
+                       ADD     POINTER, 0001
+0384 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+0386 AE00 0020
+                       STORE   TEMP, POINTER       ; 64
+7630
+                       ADD     POINTER, 0001
+0389 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ;R
+038B AE00 0020
+                       STORE   TEMP, POINTER       ; 65
+7630
+                       ADD     POINTER, 0001
+038E 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ;I
+0390 AE00 0020
+                       STORE   TEMP, POINTER       ; 66
+7630
+                       ADD     POINTER, 0001
+0393 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ; O
+0395 AE00 0020
+                       STORE   TEMP, POINTER       ; 67
+7630
+                       ADD     POINTER, 0001
+0398 8203 0001
+               
+                       LOAD    TEMP, ascii_SP ; S
+039A AE00 0020
+                       STORE   TEMP, POINTER       ; 68
+7630
+                       ADD     POINTER, 0001
+039D 8203 0001
+               
+                       LOAD    TEMP, ascii_CR
+039F AE00 000D
+                       STORE   TEMP, POINTER       ; 69
+7630
+                       ADD     POINTER, 0001
+03A2 8203 0001
+               
+                       LOAD    TEMP, ascii_LF
+03A4 AE00 000A
+                       STORE   TEMP, POINTER       ; 70
+7630
+                       ADD     POINTER, 0001
+03A7 8203 0001
+               
+                       ; 5 spaces
+                       LOAD    TEMP, ascii_SP
+03A9 AE00 0020
+                       STORE   TEMP, POINTER       ; 71
+7630
+                       ADD     POINTER, 0001
+03AC 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+03AE AE00 0020
+                       STORE   TEMP, POINTER       ; 72
+7630
+                       ADD     POINTER, 0001
+03B1 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+03B3 AE00 0020
+                       STORE   TEMP, POINTER       ; 73
+7630
+                       ADD     POINTER, 0001
+03B6 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+03B8 AE00 0020
+                       STORE   TEMP, POINTER       ; 74
+7630
+                       ADD     POINTER, 0001
+03BB 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+03BD AE00 0020
+                       STORE   TEMP, POINTER       ; 75
+7630
+                       ADD     POINTER, 0001
+03C0 8203 0001
+               
+                       LOAD    TEMP, ascii_C
+03C2 AE00 0043
+                       STORE   TEMP, POINTER       ; 76
+7630
+                       ADD     POINTER, 0001
+03C5 8203 0001
+               
+                       LOAD    TEMP, ascii_E
+03C7 AE00 0045
+                       STORE   TEMP, POINTER       ; 77
+7630
+                       ADD     POINTER, 0001
+03CA 8203 0001
+               
+                       LOAD    TEMP, ascii_C
+03CC AE00 0043
+                       STORE   TEMP, POINTER       ; 78
+7630
+                       ADD     POINTER, 0001
+03CF 8203 0001
+               
+                       LOAD    TEMP, ascii_S
+03D1 AE00 0053
+                       STORE   TEMP, POINTER       ; 79
+7630
+                       ADD     POINTER, 0001
+03D4 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+03D6 AE00 0020
+                       STORE   TEMP, POINTER       ; 80
+7630
+                       ADD     POINTER, 0001
+03D9 8203 0001
+               
+                       LOAD    TEMP, ascii_4
+03DB AE00 0034
+                       STORE   TEMP, POINTER       ; 81
+7630
+                       ADD     POINTER, 0001
+03DE 8203 0001
+               
+                       LOAD    TEMP, ascii_6
+03E0 AE00 0036
+                       STORE   TEMP, POINTER       ; 82
+7630
+                       ADD     POINTER, 0001
+03E3 8203 0001
+               
+                       LOAD    TEMP, ascii_0
+03E5 AE00 0030
+                       STORE   TEMP, POINTER       ; 83
+7630
+                       ADD     POINTER, 0001
+03E8 8203 0001
+               
+                       LOAD    TEMP, ascii_CR
+03EA AE00 000D
+                       STORE   TEMP, POINTER       ; 84
+7630
+                       ADD     POINTER, 0001
+03ED 8203 0001
+               
+                       LOAD    TEMP, ascii_LF
+03EF AE00 000A
+                       STORE   TEMP, POINTER       ; 85
+7630
+                       ADD     POINTER, 0001
+03F2 8203 0001
+               
+                       ; 5 spaces
+                       LOAD    TEMP, ascii_SP
+03F4 AE00 0020
+                       STORE   TEMP, POINTER       ; 86
+7630
+                       ADD     POINTER, 0001
+03F7 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+03F9 AE00 0020
+                       STORE   TEMP, POINTER       ; 87
+7630
+                       ADD     POINTER, 0001
+03FC 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+03FE AE00 0020
+                       STORE   TEMP, POINTER       ; 88
+7630
+                       ADD     POINTER, 0001
+0401 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+0403 AE00 0020
+                       STORE   TEMP, POINTER       ; 89
+7630
+                       ADD     POINTER, 0001
+0406 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+0408 AE00 0020
+                       STORE   TEMP, POINTER       ; 90
+7630
+                       ADD     POINTER, 0001
+040B 8203 0001
+               
+                       LOAD    TEMP, ascii_F
+040D AE00 0046
+                       STORE   TEMP, POINTER       ; 91
+7630
+                       ADD     POINTER, 0001
+0410 8203 0001
+               
+                       LOAD    TEMP, ascii_U
+0412 AE00 0055
+                       STORE   TEMP, POINTER       ; 92
+7630
+                       ADD     POINTER, 0001
+0415 8203 0001
+               
+                       LOAD    TEMP, ascii_L
+0417 AE00 004C
+                       STORE   TEMP, POINTER       ; 93
+7630
+                       ADD     POINTER, 0001
+041A 8203 0001
+               
+                       LOAD    TEMP, ascii_L
+041C AE00 004C
+                       STORE   TEMP, POINTER       ; 94
+7630
+                       ADD     POINTER, 0001
+041F 8203 0001
+               
+                       LOAD    TEMP, ascii_SP
+0421 AE00 0020
+                       STORE   TEMP, POINTER       ; 95
+7630
+                       ADD     POINTER, 0001
+0424 8203 0001
+               
+                       LOAD    TEMP, ascii_U
+0426 AE00 0055
+                       STORE   TEMP, POINTER       ; 96
+7630
+                       ADD     POINTER, 0001
+0429 8203 0001
+               
+                       LOAD    TEMP, ascii_A
+042B AE00 0041
+                       STORE   TEMP, POINTER       ; 97
+7630
+                       ADD     POINTER, 0001
+042E 8203 0001
+               
+                       LOAD    TEMP, ascii_R
+0430 AE00 0052
+                       STORE   TEMP, POINTER       ; 98
+7630
+                       ADD     POINTER, 0001
+0433 8203 0001
+               
+                       LOAD    TEMP, ascii_T
+0435 AE00 0054
+                       STORE   TEMP, POINTER       ; 99
+7630
+                       ADD     POINTER, 0001
+0438 8203 0001
+               
+                       LOAD    TEMP, ascii_CR
+043A AE00 000D
+                       STORE   TEMP, POINTER       ; 100
+7630
+                       ADD     POINTER, 0001
+043D 8203 0001
+               
+                       LOAD    TEMP, ascii_LF
+043F AE00 000A
+                       STORE   TEMP, POINTER       ; 101
+7630
+                       ADD     POINTER, 0001
+0442 8203 0001
+               
+                       LOAD    TEMP, ascii_DASH    ; 150
+0444 AE00 002D
+                       JUMP    x50
+0446 A400 0331
+               
+               finish_banner
+               
+                       LOAD    TEMP, ascii_CR
+0448 AE00 000D
+                       STORE   TEMP, POINTER       ; 151
+7630
+                       ADD     POINTER, 0001
+044B 8203 0001
+                       LOAD    TEMP, ascii_LF      ; 152
+044D AE00 000A
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0450 8203 0001
+               
+                       LOAD    CHAR_COUNT, 0000
+0452 AE0D 0000
+               
+                       RETURN
+0454 3A00               
+                       ; Enter a key
+               initialize_prompt
+               
+                       LOAD    TEMP, ascii_E       ; 154
+0455 AE00 0045
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0458 8203 0001
+               
+                       LOAD    TEMP, ascii_N       ; 155
+045A AE00 004E
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+045D 8203 0001
+               
+                       LOAD    TEMP, ascii_T       ; 156
+045F AE00 0054
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0462 8203 0001
+               
+                       LOAD    TEMP, ascii_E       ; 157
+0464 AE00 0045
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0467 8203 0001
+               
+                       LOAD    TEMP, ascii_R       ; 158
+0469 AE00 0052
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+046C 8203 0001
+               
+                       LOAD    TEMP, ascii_SP      ; 159
+046E AE00 0020
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0471 8203 0001
+               
+                       LOAD    TEMP, ascii_A       ; 160
+0473 AE00 0041
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0476 8203 0001
+               
+                       LOAD    TEMP, ascii_SP      ; 161
+0478 AE00 0020
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+047B 8203 0001
+               
+                       LOAD    TEMP, ascii_K       ; 162
+047D AE00 004B
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0480 8203 0001
+               
+                       LOAD    TEMP, ascii_E       ; 163
+0482 AE00 0045
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0485 8203 0001
+               
+                       LOAD    TEMP, ascii_Y       ; 164
+0487 AE00 0059
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+048A 8203 0001
+               
+                       LOAD    TEMP, ascii_COL     ; 165
+048C AE00 003A
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+048F 8203 0001
+               
+                       RETURN
+0491 3A00               
+               initialize_hometown
+               
+                       LOAD    TEMP, ascii_M       ; 164
+0492 AE00 004D
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0495 8203 0001
+               
+                       LOAD    TEMP, ascii_Y       ; 165
+0497 AE00 0059
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+049A 8203 0001
+               
+                       LOAD    TEMP, ascii_SP      ; 166
+049C AE00 0020
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+049F 8203 0001
+               
+                       LOAD    TEMP, ascii_H       ; 167
+04A1 AE00 0048
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04A4 8203 0001
+               
+                       LOAD    TEMP, ascii_O       ; 168
+04A6 AE00 004F
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04A9 8203 0001
+               
+                       LOAD    TEMP, ascii_M       ; 169
+04AB AE00 004D
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04AE 8203 0001
+               
+                       LOAD    TEMP, ascii_E       ; 170
+04B0 AE00 0045
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04B3 8203 0001
+               
+                       LOAD    TEMP, ascii_T       ; 171
+04B5 AE00 0054
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04B8 8203 0001
+               
+                       LOAD    TEMP, ascii_O       ; 172
+04BA AE00 004F
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04BD 8203 0001
+               
+                       LOAD    TEMP, ascii_W       ; 173
+04BF AE00 0057
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04C2 8203 0001
+               
+                       LOAD    TEMP, ascii_N       ; 174
+04C4 AE00 004E
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04C7 8203 0001
+               
+                       LOAD    TEMP, ascii_SP      ; 175
+04C9 AE00 0020
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04CC 8203 0001
+               
+                       LOAD    TEMP, ascii_I       ; 176
+04CE AE00 0049
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04D1 8203 0001
+               
+                       LOAD    TEMP, ascii_S       ; 177
+04D3 AE00 0053
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04D6 8203 0001
+               
+                       LOAD    TEMP, ascii_SP      ; 178
+04D8 AE00 0020
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04DB 8203 0001
+               
+                       LOAD    TEMP, ascii_B       ; 179
+04DD AE00 0042
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04E0 8203 0001
+               
+                       LOAD    TEMP, ascii_E       ; 180
+04E2 AE00 0045
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04E5 8203 0001
+               
+                       LOAD    TEMP, ascii_L       ; 181
+04E7 AE00 004C
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04EA 8203 0001
+               
+                       LOAD    TEMP, ascii_L       ; 182
+04EC AE00 004C
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04EF 8203 0001
+               
+                       LOAD    TEMP, ascii_comma   ; 183
+04F1 AE00 002C
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04F4 8203 0001
+               
+                       LOAD    TEMP, ascii_SP      ; 184
+04F6 AE00 0020
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04F9 8203 0001
+               
+                       LOAD    TEMP, ascii_C       ; 185
+04FB AE00 0043
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+04FE 8203 0001
+               
+                       LOAD    TEMP, ascii_A       ; 186
+0500 AE00 0041
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0503 8203 0001
+               
+                       LOAD    TEMP, ascii_CR      ; 187
+0505 AE00 000D
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0508 8203 0001
+               
+                       LOAD    TEMP, ascii_LF      ; 188
+050A AE00 000A
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+050D 8203 0001
+               
+                       RETURN
+050F 3A00               
+               initialize_backspace
+               
+                       LOAD    TEMP, ascii_BS      ; 191
+0510 AE00 0008
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0513 8203 0001
+               
+                       LOAD    TEMP, ascii_SP      ; 192
+0515 AE00 0020
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0518 8203 0001
+               
+                       LOAD    TEMP, ascii_BS      ; 193
+051A AE00 0008
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+051D 8203 0001
+               
+                       RETURN
+051F 3A00               
+               initialize_crlf
+               
+                       LOAD    TEMP, ascii_CR      ; 194
+0520 AE00 000D
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0523 8203 0001
+               
+                       LOAD    TEMP, ascii_LF      ; 195
+0525 AE00 000A
+                       STORE   TEMP, POINTER
+7630
+                       ADD     POINTER, 0001
+0528 8203 0001
+               
+                       RETURN
+052A 3A00               
+               ; --------------------GOT_TXRDY----------------
+               ;
+               ;   Retrieves data from scratchRam based on the
+               ;   current case
+               ;
+               ; --------------------------------------------
+               GOT_TXRDY
+                       COMP    CASE, 0000          ; if the case is 0, then return
+052B 980C 0000
+                       RETURNZ
+052D 4000               
+                       FETCH   TEMP, POINTER       ; fetch what's pointed to by the pointer
+7230
+                       OUTPUT  TEMP, 0000          ; output the data
+052F B800 0000
+                       ADD     POINTER 0001        ; increment the pointer
+0531 8203 0001
+               
+                       COMP    CASE, 0001          ; case 1 -> display the banner
+0533 980C 0001
+                       JUMPZ   PRINT_BANNER
+0535 AA00 0552
+               
+                       COMP    CASE, 0002          ; case 2 -> display the prompt
+0537 980C 0002
+                       JUMPZ   PRINT_PROMPT
+0539 AA00 0558
+               
+                       COMP    CASE, 0003
+053B 980C 0003
+                       JUMPZ   PRINT_HOMETOWN      ; case 3 -> display the hometown
+053D AA00 055e
+               
+                       COMP    CASE, 0004          ; case 4 -> display the bs (bs sp bs)
+053F 980C 0004
+                       JUMPZ   PRINT_BS
+0541 AA00 054c
+               
+                       COMP    CASE, 0005          ; case 5 -> display the crlf
+0543 980C 0005
+                       JUMPZ   PRINT_CRLF
+0545 AA00 0566
+               
+                       COMP    CASE, 0006          ; case 6 -> display the count
+0547 980C 0006
+                       JUMPZ   PRINT_COUNT
+0549 AA00 056e
+               
+                       RETURN
+054B 3A00               
+               PRINT_BS
+               
+                       COMP    POINTER, end_bs
+054C 9803 00C0
+                       RETURNC
+054E 3C00                       LOAD    CASE, 0000
+054F AE0C 0000
+                       RETURN
+0551 3A00               
+               
+               PRINT_BANNER
+               
+                       COMP        POINTER, end_banner
+0552 9803 0098
+                       RETURNC
+0554 3C00                       LOAD        CASE, 0002      ; print prompt after
+0555 AE0C 0002
+                       RETURN
+0557 3A00               
+               PRINT_PROMPT
+               
+                       COMP        POINTER, end_prompt
+0558 9803 00A4
+                       RETURNC
+055A 3C00                       LOAD        CASE, 0000
+055B AE0C 0000
+                       RETURN
+055D 3A00               
+               PRINT_HOMETOWN
+               
+                       COMP        POINTER, end_hometown
+055E 9803 00BD
+                       RETURNC
+0560 3C00                       LOAD        POINTER, start_prompt
+0561 AE03 0098
+                       LOAD        CASE, 0002
+0563 AE0C 0002
+                       RETURN
+0565 3A00               
+               PRINT_CRLF
+               
+                       COMP        POINTER, end_crlf
+0566 9803 00C2
+                       RETURNC
+0568 3C00                       LOAD        POINTER, start_prompt
+0569 AE03 0098
+                       LOAD        CASE, 0002  ; print prompt after
+056B AE0C 0002
+                       RETURN
+056D 3A00               
+               PRINT_COUNT
+               
+                       COMP    POINTER, COUNT_END
+056E 9803 00C4
+                       RETURNC
+0570 3C00                       LOAD    POINTER, start_crlf
+0571 AE03 00C0
+                       LOAD    CASE, 0005
+0573 AE0C 0005
+                       RETURN
+0575 3A00               
+               
+               
+               
+               ; --------------------GOT_RXRDY---------------
+               ;
+               ;     Sets the case and the pointer based on
+               ;     user input..
+               ;
+               ; --------------------------------------------
+               GOT_RXRDY
+                       COMP        CASE, 0000     ; z if its true
+0576 980C 0000
+                       RETURNNZ                   ; return if no z
+0578 4200                       ; i.e. only enter this function if the user is inputted
+                       ; chars
+                       ; based on those chars, set the case and the pointer
+               
+                       INPUT       DATA, 0000
+0579 A202 0000
+                       COMP        DATA, 0000 ; comp to null
+057B 9802 0000
+                       RETURNZ
+057D 4000               
+                       COMP        DATA, ascii_aster
+057E 9802 002A
+                       JUMPZ       SET_HOMETOWN
+0580 AA00 0597
+               
+                       COMP        DATA, ascii_BS
+0582 9802 0008
+                       JUMPZ       SET_BS
+0584 AA00 05a2
+               
+                       COMP        DATA, ascii_CR
+0586 9802 000D
+                       JUMPZ       SET_CRLF
+0588 AA00 05b0
+               
+                       COMP        DATA, ascii_AT
+058A 9802 0040
+                       JUMPZ       SET_AT
+058C AA00 05bb
+               
+                       ; This last condition is used for echoing
+                       ADD         CHAR_COUNT, 0001
+058E 820D 0001
+                       OUTPUT      DATA, 0000
+0590 B802 0000
+                       COMP        CHAR_COUNT, forty
+0592 980D 0028
+                       JUMPZ       SET_CRLF
+0594 AA00 05b0
+                       RETURN
+0596 3A00               
+               
+               SET_HOMETOWN
+                       LOAD        CASE, 0003
+0597 AE0C 0003
+                       LOAD        POINTER, start_hometown
+0599 AE03 00A4
+                       LOAD        TEMP, ascii_null
+059B AE00 0000
+                       OUTPUT      TEMP, 0000
+059D B800 0000
+                       LOAD        CHAR_COUNT, 0000
+059F AE0D 0000
+                       RETURN
+05A1 3A00               
+               
+               SET_BS
+                       COMP        CHAR_COUNT, 0000
+05A2 980D 0000
+                       RETURNZ
+05A4 4000                       LOAD        CASE, 0004
+05A5 AE0C 0004
+                       LOAD        POINTER, start_bs
+05A7 AE03 00BD
+                       LOAD        TEMP, ascii_null
+05A9 AE00 0000
+                       OUTPUT      TEMP, 0000
+05AB B800 0000
+                       SUB         CHAR_COUNT, 0001
+05AD DC0D 0001
+                       RETURN
+05AF 3A00               
+               
+               SET_CRLF
+               
+                       LOAD        CASE, 0005
+05B0 AE0C 0005
+                       LOAD        POINTER, start_crlf
+05B2 AE03 00C0
+                       LOAD        TEMP, ascii_null
+05B4 AE00 0000
+                       OUTPUT      TEMP, 0000
+05B6 B800 0000
+                       LOAD        CHAR_COUNT, 0000
+05B8 AE0D 0000
+                       RETURN
+05BA 3A00               
+               SET_AT
+                       CALL        BINARY_TO_ASCII
+05BB 8E00 0316
+                       LOAD        CASE, 0006
+05BD AE0C 0006
+                       LOAD        POINTER, COUNT_BEGIN
+05BF AE03 00C2
+                       LOAD        TEMP, ascii_null
+05C1 AE00 0000
+                       OUTPUT      TEMP, 0000
+05C3 B800 0000
+                       LOAD        CHAR_COUNT, 0000
+05C5 AE0D 0000
+                       RETURN
+05C7 3A00               
+               
+               
+               ; -----------------------------------------------
+               ; interrupt service routine vectored through 0FFE
+               ; -----------------------------------------------
+               
+                       ADDRESS 0FFE
+                       JUMP    ISR
+0FFE A400 0300
+                       END

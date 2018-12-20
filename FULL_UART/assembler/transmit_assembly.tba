@@ -1,0 +1,226 @@
+;****************************************************************//
+; File name: receive.tba
+;
+; Created by       Rosswell Tiongco on <12/19/18>.
+; Copyright © 2018 Rosswell Tiongco. All rights reserved.
+;
+;
+; In submitting this file for class work at CSULB
+; I am confirming that this is my work and the work
+; of no one else. In submitting this code I acknowledge that
+; plagiarism in student project work is subject to dismissal
+; from the class.
+;****************************************************************//
+
+; constant ASCII values used for displaying string
+ASCII_C         EQU    0043
+ASCII_S         EQU    0053
+ASCII_U         EQU    0055
+ASCII_L         EQU    004C
+ASCII_B         EQU    0042
+ASCII_Space     EQU    0020
+ASCII_E         EQU    0045
+ASCII_4         EQU    0034
+ASCII_6         EQU    0036
+ASCII_0         EQU    0030
+ASCII_DASH      EQU    002D
+ASCII_CR        EQU    000D
+ASCII_LF        EQU    000A
+; points to addresses in Scratch Ram
+POINTER         EQU     R3
+; stores the current count of the string
+COUNTER         EQU     R2
+; stores LED value to be displayed on FPGA board while in main loop
+LEDS            EQU     R4
+; used in delay subroutine to create .01s delay
+DELAY_COUNT1    EQU     R5
+DELAY_COUNT2    EQU     R6
+; temporary register
+TEMP            EQU     R1
+
+; --------------------------
+; Initialization Section
+; --------------------------
+Init
+        LOAD    COUNTER,        0000
+        LOAD    POINTER,        0000
+        LOAD    DELAY_COUNT1,   0000
+        LOAD    DELAY_COUNT2    0000
+        LOAD    LEDS,           0001
+
+        ; -----------------------------------------------
+        ; store each ascii value of the target string
+        ; in the Scratch Pad Memory in consecutive order
+        ; -----------------------------------------------
+        LOAD    TEMP, ASCII_C
+        STORE   TEMP, 0000
+        LOAD    TEMP, ASCII_S
+        STORE   TEMP, 0001
+        LOAD    TEMP, ASCII_U
+        STORE   TEMP, 0002
+        LOAD    TEMP, ASCII_L
+        STORE   TEMP, 0003
+        LOAD    TEMP, ASCII_B
+        STORE   TEMP, 0004
+        LOAD    TEMP, ASCII_Space
+        STORE   TEMP, 0005
+        LOAD    TEMP, ASCII_C
+        STORE   TEMP, 0006
+        LOAD    TEMP, ASCII_E
+        STORE   TEMP, 0007
+        LOAD    TEMP, ASCII_C
+        STORE   TEMP, 0008
+        LOAD    TEMP, ASCII_S
+        STORE   TEMP, 0009
+        LOAD    TEMP, ASCII_Space
+        STORE   TEMP, 000A
+        LOAD    TEMP, ASCII_4
+        STORE   TEMP, 000B
+        LOAD    TEMP, ASCII_6
+        STORE   TEMP, 000C
+        LOAD    TEMP, ASCII_0
+        STORE   TEMP, 000D
+        LOAD    TEMP, ASCII_Space
+        STORE   TEMP, 000E
+        LOAD    TEMP, ASCII_DASH
+        STORE   TEMP, 000F
+        LOAD    TEMP, ASCII_Space
+        STORE   TEMP, 0010
+
+        ; 0011 - 10000s position for count
+        ; 0012 - 1000s  position for count
+        ; 0013 - 100s   position for count
+        ; 0014 - 10s    position for count
+        ; 0015 - 1s     position for count
+
+        LOAD    TEMP, ASCII_CR
+        STORE   TEMP, 0016
+        LOAD    TEMP, ASCII_LF
+        STORE   TEMP, 0017
+        ENINT
+
+
+; --------------------Main-------------------
+;
+;       Infinite Loop which waits for
+;       INTERRUPT AND OUTPUTS a walking LED
+;       to the Nexys 4 FPGA board
+;
+; -------------------------------------------
+Main
+        OUTPUT  LEDS, 0001      ; output to port 0001
+        RL      LEDS            ; shift LED left
+        CALL    Delay           ; wait .01
+        CALL    Delay           ; wait .01
+        JUMP    Main
+
+
+; --------------------Delay-------------------
+;
+;       Generates a 0.01s delay
+;       Assumes 100MHz board clock
+;
+; --------------------------------------------
+Delay
+        ADD     DELAY_COUNT1, 0001   ; add 1 to DELAY_COUNT1
+        ADDC    DELAY_COUNT2, 0000   ; C==DELAY_COUNT1 rolls from FFFF -> 0000
+        COMP    DELAY_COUNT2, 000F   ; check if at the end of delay
+        JUMPNZ  Delay                ; if not -> keep counting
+        LOAD    DELAY_COUNT1, 0000   ; else -> reset counts and return
+        LOAD    DELAY_COUNT2, 0000
+        RETURN
+
+
+; -------------INTERRUPT--------------
+;
+;   When the TXRDY signal triggers the
+;   interrupt of the TB. This ISR will
+;   continuously output the sequence:
+;   CSULB CECS 460 <CR> <LF>
+;
+; ------------------------------------
+        ADDRESS 0300
+ISR
+        ; ----------------------------------------------
+        ; first check to see if the pointer is pointing
+        ; to the count portion
+        ; ----------------------------------------------
+        COMP    POINTER, 0011         ; check if at point to show count
+        CALLZ   BINARY_TO_ASCII       ; if yes -> call conversion subroutine
+        FETCH   TEMP, POINTER         ; fetch the current character
+        OUTPUT  TEMP, 0000            ; output the character
+        COMP    POINTER, 0017         ; are we at the end of the string
+        JUMPNZ  incPointer            ; if not -> keep going
+        LOAD    POINTER, 0000         ; else reset the pointer
+        RETEN
+
+incPointer
+        ADD POINTER, 0001
+        RETEN
+
+
+; -------------BINARY_TO_ASCII--------------
+;
+;   CONVERTS THE COUNT TO AN ASCII #
+;   and stores in each decimal place value
+;   in the Scratch Pad Memory
+;
+; ------------------------------------------
+BINARY_TO_ASCII
+        LOAD    RE, COUNTER    ; load RE with counter
+
+        LOAD    RD, 2710       ; RD <- 10,000
+        CALL    FIND_IT        ; Call find it to set *RB (number of 10000s)
+        ADD     RB, 0030       ; add 0x0030 for ascii conversion
+        STORE   RB, 0011       ; store
+
+        LOAD    RD, 03E8       ; RD <- 1,000
+        CALL    FIND_IT        ; Call find it to set *RB (number of 1000s)
+        ADD     RB, 0030       ; add 0x0030 for ascii conversion
+        STORE   RB, 0012       ; store
+
+        LOAD    RD, 0064       ; RD <- 100
+        CALL    FIND_IT        ; Call find it to set *RB (number of 100s)
+        ADD     RB, 0030       ; add 0x0030 for ascii conversion
+        STORE   RB, 0013       ; store
+
+        LOAD    RD, 000A       ; RD <- 10
+        CALL    FIND_IT        ; Call find it to set *RB (number of 10s)
+        ADD     RB, 0030       ; add 0x0030 for ascii conversion
+        STORE   RB, 0014       ; store
+
+        ; 1's left
+        ADD     RE, 0030       ; add 0x0030 for ascii conversion
+        STORE   RE, 0015       ; store
+
+        ADD     COUNTER, 0001
+
+        RETURN
+
+; -----------------FIND_IT------------------
+;
+;   Helper function for BINARY_TO_ASCII
+;   implements division through subtraction
+;   tracks the # of 1s, 10s, 100s,...,10000s
+;
+; ------------------------------------------
+FIND_IT
+        LOAD    RB, 0000
+
+SUBTRACT
+        SUB     RE, RD
+        JUMPC   RESTORE_LAST
+        ADD     RB, 0001
+        JUMP    SUBTRACT
+
+RESTORE_LAST
+        ADD     RE, RD
+        RETURN
+
+; -----------------------------------------------
+; interrupt service routine vectored through 0FFE
+; -----------------------------------------------
+
+        ADDRESS 0FFE
+        JUMP    ISR
+        END

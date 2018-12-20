@@ -199,7 +199,7 @@
     </transform>
     <transform xil_pn:end_ts="1541041871" xil_pn:in_ck="-1496933147215575561" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3444185330294647437" xil_pn:start_ts="1541041865">
       <status xil_pn:value="FailedRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -279,6 +279,7 @@
     <transform xil_pn:end_ts="1541106900" xil_pn:in_ck="-142745965128162440" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-621561783091599817" xil_pn:start_ts="1541106887">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.bld"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.ngd"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460_ngdbuild.xrpt"/>
@@ -288,6 +289,7 @@
     <transform xil_pn:end_ts="1541106982" xil_pn:in_ck="-7768499998721724703" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="2100985583056581773" xil_pn:start_ts="1541106900">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.pcf"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460_map.map"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460_map.mrp"/>
@@ -301,6 +303,7 @@
     <transform xil_pn:end_ts="1541107064" xil_pn:in_ck="-6787737365743597958" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1541106982">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.ncd"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.pad"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.par"/>
@@ -315,6 +318,7 @@
     <transform xil_pn:end_ts="1541107126" xil_pn:in_ck="-7835596535806599828" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="306664139534459597" xil_pn:start_ts="1541107064">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="txrdy_csulb_cecs_460.bgn"/>
@@ -327,6 +331,7 @@
     <transform xil_pn:end_ts="1541107064" xil_pn:in_ck="-7768499998721724835" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1541107035">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.twr"/>
       <outfile xil_pn:name="TXRDY_CSULB_CECS_460.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
